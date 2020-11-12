@@ -8,6 +8,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
+    "db-seed":"node db/randomDataGenerator.js",
     "react-dev": "webpack --watch",
     "server-dev": "nodemon server/index.js"
   },

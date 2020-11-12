@@ -1,3 +1,6 @@
+const mongoose = require('mongoose');
+const Book = require('./index.js');
+
 // generate random data in line with the shape required by the Mongo collection
 
 
@@ -39,10 +42,9 @@ function getRandomBool() {
 function randomDataGenerator(records) {
   var testData = [];
   for (var i = 0; i < records; i++) {
-    console.log('here rec')
     var currentObject = {};
-    // generate a unique id for the current collection record
-    currentObject.id = i;
+    // generate a unique isbn for the current collection record
+    currentObject.isbn = i;
 
     // generate a title for the current collection record
     var title = '';
@@ -105,3 +107,22 @@ function randomDataGenerator(records) {
   }
   return testData;
 }
+
+var sampleData = randomDataGenerator(100);
+//console.log('sampleData', sampleData);
+
+var insertBooks = function() {
+  Book.insertMany(sampleData, (err, docs) => {
+    if (err) {
+      console.log('there was an error');
+      mongoose.connection.close();
+    } else {
+      console.log('insert complete');
+      //console.log('docs', docs);
+      mongoose.connection.close();
+    }
+
+  })
+};
+
+insertBooks();
