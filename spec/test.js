@@ -1,3 +1,7 @@
+import React from 'react';
+import { shallow } from 'enzyme';
+import Trial from '../client/src/components/trial.jsx'
+
 describe('Test for tests', () => {
   it('should be true', () => {
     const foo = true;
@@ -9,3 +13,11 @@ describe('Test for tests', () => {
   })
 
 });
+
+
+describe('Trial test', () => {
+  it('should have text in a div', () => {
+    const wrapper = shallow(<Trial/>);
+    expect(wrapper.text()).toBe('Hello from React from Trial');
+  })
+})
