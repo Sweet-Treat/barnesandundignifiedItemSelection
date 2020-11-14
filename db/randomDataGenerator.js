@@ -103,12 +103,14 @@ function randomDataGenerator(records) {
       currentObject.options.push(audioCDOption);
     }
     testData.push(currentObject);
+    //console.log('i',i)
+    //console.log('testData', testData);
 
   }
   return testData;
 }
 
-var sampleData = randomDataGenerator(100);
+var sampleData = randomDataGenerator(1000);
 //console.log('sampleData', sampleData);
 
 var insertBooks = function() {
@@ -118,7 +120,7 @@ var insertBooks = function() {
       mongoose.connection.close();
     } else {
       console.log('insert complete');
-      //console.log('docs', docs);
+     // console.log('docs', docs);
       mongoose.connection.close();
     }
 
