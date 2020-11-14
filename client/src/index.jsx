@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Trial from './components/trial.jsx';
+import Header from './components/header.jsx';
 
 class App extends React.Component {
   constructor (props) {
@@ -11,7 +12,10 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div><Trial/></div>
+      <div>
+        <div><Header/></div>
+        <div><Trial/></div>
+      </div>
     );
   }
 }
