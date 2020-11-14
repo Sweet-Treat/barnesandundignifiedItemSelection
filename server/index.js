@@ -15,13 +15,15 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('client/dist'))
 
 app.get('/:id', (req, res) => {
-  var id = req.params.id;
+  var id = req.params.id || 1;
   Books.findOne({isbn: id}, (err, bookInfo) => {
     if (err) {
       console.log('Book does not exist')
       res.send();
     } else {
       console.log('Book exists')
+      console.log('bookInfo', bookInfo)
+
       res.send(bookInfo);
     }
   })
