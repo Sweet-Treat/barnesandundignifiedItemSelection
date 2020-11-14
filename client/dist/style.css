@@ -22,3 +22,10 @@
   font-family: Lato,sans-serif;
   font-size: 11.5px;
 }
+
+.star-empty{
+  color: #e2e2e2;
+}
+.star{
+  color: #f2a70c;
+}

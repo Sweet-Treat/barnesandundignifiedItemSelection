@@ -20,7 +20,8 @@
     "mongoose": "^5.10.13",
     "path": "^0.12.7",
     "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "react-icons": "^3.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
