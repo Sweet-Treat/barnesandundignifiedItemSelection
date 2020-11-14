@@ -1,4 +1,5 @@
 import React from 'react';
+import Stars from './stars.jsx';
 
 var Header = () => {
   return (
@@ -9,7 +10,7 @@ var Header = () => {
         <span className="book-author green-text"> FirstName LastName </span>
       </div>
       <div>
-        <span> stars Component </span>
+        <span> <Stars/> </span>
         <span className="rating green-text"> average rating | numb reviews </span>
       </div>
     </div>
