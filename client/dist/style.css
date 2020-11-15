@@ -73,7 +73,6 @@
 .inventory-container{
   width: 100%;
   float: left;
-
 }
 
 .inventory-element{
@@ -85,6 +84,10 @@
   padding-top: .375em;
   padding-bottom: .375em;
   margin: 5px;
+}
+
+.inventory-element:hover{
+  border: 1px solid #346250;
 }
 
 .inventory-price{
