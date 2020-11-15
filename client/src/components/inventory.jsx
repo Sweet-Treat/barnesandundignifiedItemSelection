@@ -8,7 +8,7 @@ class Inventory extends React.Component {
     this.state = {
       inventory: [],
       currentName: 'Placeholder name',
-      currentPrice: 999,
+      regularPrice: 999,
       currentDiscount: 999
     }
     this.getInventory = this.getInventory.bind(this);
@@ -24,7 +24,7 @@ class Inventory extends React.Component {
       this.setState({
         inventory: data.data.options,
         currentName: data.data.options[0].name,
-        currentPrice: data.data.options[0].price,
+        regularPrice: data.data.options[0].price,
         currentDiscount: data.data.options[0].discount
       })
     })
@@ -34,7 +34,7 @@ class Inventory extends React.Component {
   }
 
   componentDidMount() {
-    var isbn = 10;
+    var isbn = 16;
     this.getInventory(isbn);
   }
 
@@ -43,10 +43,15 @@ class Inventory extends React.Component {
       <div>
         <div className ="name-type"> {this.state.currentName} </div>
         <div>
-          <span className ="price-regular"> ${this.state.currentPrice}.99 </span>
-          <span className ="price-discount"> ${Math.round(this.state.currentPrice * (1 - this.state.currentDiscount / 100))}.99</span>
-          <span className ="price-pipe"> | </span>
-    <span className ="percentage-discount"> Save {this.state.currentDiscount}% </span>
+          <span className ="price"> ${ this.state.currentDiscount === 0 ? `${this.state.regularPrice}.99` : ((this.state.regularPrice + 0.99) * (1 - this.state.currentDiscount / 100)).toFixed(2)} </span>
+
+          {this.state.currentDiscount !== 0 &&
+          <span>
+            <span className ="price-regular"> ${this.state.regularPrice}.99</span>}
+            <span className ="price-pipe"> | </span>
+
+            <span className ="percentage-discount"> Save {this.state.currentDiscount}% </span>
+          </span>}
         </div>
 
 

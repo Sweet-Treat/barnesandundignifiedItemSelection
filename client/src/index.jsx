@@ -51,7 +51,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    var isbn = 10;
+    var isbn = 16;
     this.getTitleAndAuthor(isbn);
     this.getReviews(isbn);
   }
