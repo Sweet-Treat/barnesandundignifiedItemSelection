@@ -3,7 +3,7 @@
 }
 
 .book-title{
-  font-family: Poynter,Georgia,serif;
+  font-family: Poynter, Georgia, serif;
   font-weight: 400;
   font-style: normal;
   font-size: 2.08rem;
@@ -11,7 +11,7 @@
 }
 
 .book-author{
-  font-family: Lato,sans-serif;
+  font-family: Lato, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1.077rem;
@@ -19,7 +19,7 @@
 }
 
 .rating{
-  font-family: Lato,sans-serif;
+  font-family: Lato, sans-serif;
   font-size: 11.5px;
 }
 
@@ -32,4 +32,40 @@
 
 .line-separator{
   border-top: 1px solid #cccccc;
+}
+
+.name-type{
+  font-size: 1.077rem;
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.price-regular{
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.125rem;
+  margin-right: .75rem;
+}
+
+.price-discount{
+  color: #666;
+  font-family: Lato,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.077rem;
+  text-decoration: line-through;
+}
+
+.price-pipe{
+  color: #666;
+}
+
+.percentage-discount{
+  color: #d83e00;
+  font-family: Lato,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.077rem;
 }
