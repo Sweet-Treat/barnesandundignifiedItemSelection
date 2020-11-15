@@ -4,12 +4,12 @@ mongoose.connect('mongodb://localhost/fecItemSelection', {useNewUrlParser: true,
 
 const schema = new mongoose.Schema({
   "isbn": Number,
-  "title": String,
-  "author": String,
-  "reviews": {
-    "score": Number,
-    "number": Number
-    },
+ // "title": String,
+ // "author": String,
+ // "reviews": {
+ //   "score": Number,
+ //   "number": Number
+ //   },
   "options": Array
 });
 

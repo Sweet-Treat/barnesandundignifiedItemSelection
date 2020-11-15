@@ -47,20 +47,20 @@ function randomDataGenerator(records) {
     currentObject.isbn = i;
 
     // generate a title for the current collection record
-    var title = '';
-    var wordsInTitle = getRandomInt(1, 8);
-    for (var j = 0; j < wordsInTitle; j++) {
-      title = title + ' ' + randomWord(getRandomInt(1, 10));
-    }
-    currentObject.title = title;
+    // var title = '';
+    // var wordsInTitle = getRandomInt(1, 8);
+    // for (var j = 0; j < wordsInTitle; j++) {
+    //   title = title + ' ' + randomWord(getRandomInt(1, 10));
+    // }
+    // currentObject.title = title;
 
     // generate an author
-    currentObject.author = randomWord(getRandomInt(3, 9)) + ' ' + randomWord(getRandomInt(3, 10));
+    // currentObject.author = randomWord(getRandomInt(3, 9)) + ' ' + randomWord(getRandomInt(3, 10));
 
     // generate a reviews object
-    currentObject.reviews = {};
-    currentObject.reviews.score = getRandomArbitrary(0, 5);
-    currentObject.reviews.number = getRandomInt(1, 1500);
+    // currentObject.reviews = {};
+    // currentObject.reviews.score = getRandomArbitrary(0, 5);
+    // currentObject.reviews.number = getRandomInt(1, 1500);
 
     // create an objects array
     currentObject.options =[];
@@ -111,7 +111,7 @@ function randomDataGenerator(records) {
 }
 
 var sampleData = randomDataGenerator(1000);
-//console.log('sampleData', sampleData);
+console.log('sampleData', sampleData);
 
 var insertBooks = function() {
   Book.insertMany(sampleData, (err, docs) => {

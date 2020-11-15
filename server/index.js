@@ -23,7 +23,6 @@ app.get('/:id', (req, res) => {
     } else {
       console.log('Book exists')
      // console.log('bookInfo', bookInfo)
-
       res.send(bookInfo);
     }
   })
