@@ -12,7 +12,8 @@ var Header = (props) => {
       <div>
         <span> <Stars reviews = {props.reviews}/> </span>
         <span className="rating green-text"> {props.reviews.avgRating} ({props.reviews.totalReviews}) </span>
-      </div>
+      </div >
+      <hr class="line-separator"/>
     </div>
   );
 }
