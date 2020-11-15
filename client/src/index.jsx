@@ -23,7 +23,10 @@ class App extends React.Component {
       url: `/getInventory/${isbn}`
     })
     .then((data) => {
-      console.log('this is invetory data ', data);
+      console.log('this is inventory data ', data);
+      this.setState({
+        inventory: data.data
+      })
     })
     .catch((err) => {
       console.log('there was an error during the axios inventory get request: err ', err)
@@ -37,6 +40,9 @@ class App extends React.Component {
     })
     .then((data) => {
       console.log('this is product data ', data);
+      this.setState({
+        titleAndAuthor: data.data
+      })
     })
     .catch((err) => {
       console.log('there was an error during the axios title get request: err ', err)
@@ -50,6 +56,9 @@ class App extends React.Component {
     })
     .then((data) => {
       console.log('this is reviews data ', data);
+      this.setState({
+        reviews: data.data
+      })
     })
     .catch((err) => {
       console.log('there was an error during the axios reviews get request: err ', err)
@@ -67,7 +76,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div><Header/></div>
+        <div><Header titleAndAuthor = {this.state.titleAndAuthor} reviews = {this.state.reviews}/></div>
         <div><Trial/></div>
       </div>
     );

@@ -41,7 +41,7 @@ app.get('/product/:id', (req, res) => {
 app.get('/reviewssummary/:id', (req, res) => {
   var reviews = {
     totalReviews: 10,
-    avgRating: 3.5
+    avgRating: 2.5
   }
   res.send(reviews);
 })
