@@ -2,6 +2,8 @@ import React from 'react';
 
 import axios from 'axios';
 
+import Options from './options.jsx';
+
 class Inventory extends React.Component {
   constructor(props) {
     super(props);
@@ -47,11 +49,14 @@ class Inventory extends React.Component {
 
           {this.state.currentDiscount !== 0 &&
           <span>
-            <span className ="price-regular"> ${this.state.regularPrice}.99</span>}
+            <span className ="price-regular"> ${this.state.regularPrice}.99</span>
             <span className ="price-pipe"> | </span>
 
             <span className ="percentage-discount"> Save {this.state.currentDiscount}% </span>
           </span>}
+          <div>
+            <Options/>
+          </div>
         </div>
 
 
