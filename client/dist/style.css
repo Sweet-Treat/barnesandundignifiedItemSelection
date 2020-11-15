@@ -69,3 +69,24 @@
   font-style: normal;
   font-size: 1.077rem;
 }
+
+.inventory-container{
+  width: 100%;
+  float: left;
+
+}
+
+.inventory-element{
+  font-family: Lato,sans-serif;
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid #cccccc;
+  padding-top: .375em;
+  padding-bottom: .375em;
+  margin: 5px;
+}
+
+.inventory-price{
+  font-weight: 700;
+}

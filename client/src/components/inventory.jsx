@@ -22,7 +22,7 @@ class Inventory extends React.Component {
       url: `/getInventory/${isbn}`
     })
     .then((data) => {
-      console.log('this is inventory data ', data);
+      //console.log('this is inventory data ', data);
       this.setState({
         inventory: data.data.options,
         currentName: data.data.options[0].name,
@@ -55,13 +55,9 @@ class Inventory extends React.Component {
             <span className ="percentage-discount"> Save {this.state.currentDiscount}% </span>
           </span>}
           <div>
-            <Options/>
+            <Options inventory = {this.state.inventory}/>
           </div>
         </div>
-
-
-        <div>{console.log('this.state.inventory', this.state.inventory[0])}</div>
-        <div>This is an inventory component that I will start building</div>
       </div>
     )
   }
