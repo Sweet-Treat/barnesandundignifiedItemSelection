@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import axios from 'axios';
+
 import Trial from './components/trial.jsx';
 import Header from './components/header.jsx';
-import axios from 'axios';
+import Inventory from './components/inventory.jsx';
 
 class App extends React.Component {
   constructor (props) {
@@ -77,6 +80,7 @@ class App extends React.Component {
     return (
       <div>
         <div><Header titleAndAuthor = {this.state.titleAndAuthor} reviews = {this.state.reviews}/></div>
+        <div><Inventory/></div>
         <div><Trial/></div>
       </div>
     );
