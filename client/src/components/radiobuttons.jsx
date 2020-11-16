@@ -21,6 +21,10 @@ var Radiobuttons = () => {
           </label>
           <div className="green-text availability">Check Availability at Nearby Stores</div>
         </div>
+        <div className="button-container">
+          <input type="submit" value="ADD TO CART" className="add-to-cart"/>
+          <input type="submit" value="Sign in to Purchase Instantly" className="sign-in"/>
+        </div>
 
     </div>
   )
