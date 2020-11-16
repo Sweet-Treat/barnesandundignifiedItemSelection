@@ -75,6 +75,19 @@
   float: left;
 }
 
+
+.inventory-selected{
+  font-family: Lato,sans-serif;
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid #346250;
+  background-color: #f2f2f2;
+  padding-top: .375em;
+  padding-bottom: .375em;
+  margin: 5px;
+}
+
 .inventory-element{
   font-family: Lato,sans-serif;
   width: 100px;
@@ -88,8 +101,23 @@
 
 .inventory-element:hover{
   border: 1px solid #346250;
+  cursor: pointer;
 }
 
 .inventory-price{
   font-weight: 700;
+}
+
+.view-all-inventory{
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  padding: 0;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.view-all-inventory:hover{
+  text-decoration: underline;
 }

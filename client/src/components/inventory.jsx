@@ -9,6 +9,7 @@ class Inventory extends React.Component {
     super(props);
     this.state = {
       inventory: [],
+      currentOption: 0,
       currentName: 'Placeholder name',
       regularPrice: 999,
       currentDiscount: 999
@@ -55,7 +56,7 @@ class Inventory extends React.Component {
             <span className ="percentage-discount"> Save {this.state.currentDiscount}% </span>
           </span>}
           <div>
-            <Options inventory = {this.state.inventory}/>
+            <Options inventory = {this.state.inventory} currentOption = {this.state.currentOption}/>
           </div>
         </div>
       </div>
