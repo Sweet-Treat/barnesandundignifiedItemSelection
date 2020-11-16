@@ -5,7 +5,12 @@ import axios from 'axios';
 
 import Trial from './components/trial.jsx';
 import Header from './components/header.jsx';
+<<<<<<< HEAD
 import Inventory from './components/inventory.jsx';
+=======
+import Radiobuttons from './components/radiobuttons.jsx';
+import axios from 'axios';
+>>>>>>> add a stateless radiobutton component
 
 class App extends React.Component {
   constructor (props) {
@@ -62,6 +67,7 @@ class App extends React.Component {
       <div>
         <div><Header titleAndAuthor = {this.state.titleAndAuthor} reviews = {this.state.reviews}/></div>
         <div><Inventory/></div>
+        <div><Radiobuttons/></div>
         <div><Trial/></div>
       </div>
     );
