@@ -34,6 +34,40 @@
   border-top: 1px solid #cccccc;
 }
 
+.radio-container{
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.radio-container-bold{
+  font-weight: 700;
+}
+
+.radio-container:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.circle-info:hover{
+  color: white;
+  background-color:  #347d56;
+  cursor: pointer;
+}
+
+.availability{
+  font-family: Lato,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+}
+
+.availability:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
 .name-type{
   font-size: 1.077rem;
   font-family: Lato, sans-serif;
