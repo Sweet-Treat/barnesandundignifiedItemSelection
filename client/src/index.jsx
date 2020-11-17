@@ -1,36 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import axios from 'axios';
+
 import Trial from './components/trial.jsx';
 import Header from './components/header.jsx';
-import axios from 'axios';
+import Inventory from './components/inventory.jsx';
 
 class App extends React.Component {
   constructor (props) {
     super (props);
     this.state = {
       titleAndAuthor: {},
-      reviews: {},
-      inventory: {},
+      reviews: {}
     }
-    this.getInventory = this.getInventory.bind(this);
     this.getTitleAndAuthor = this.getTitleAndAuthor.bind(this);
     this.getReviews = this.getReviews.bind(this);
-  }
-
-  getInventory(isbn) {
-    axios({
-      method: 'get',
-      url: `/getInventory/${isbn}`
-    })
-    .then((data) => {
-      console.log('this is inventory data ', data);
-      this.setState({
-        inventory: data.data
-      })
-    })
-    .catch((err) => {
-      console.log('there was an error during the axios inventory get request: err ', err)
-    })
   }
 
   getTitleAndAuthor(isbn) {
@@ -39,7 +24,7 @@ class App extends React.Component {
       url: `/product/${isbn}`
     })
     .then((data) => {
-      console.log('this is product data ', data);
+      //console.log('this is product data ', data);
       this.setState({
         titleAndAuthor: data.data
       })
@@ -55,7 +40,7 @@ class App extends React.Component {
       url: `/reviewssummary/${isbn}`
     })
     .then((data) => {
-      console.log('this is reviews data ', data);
+      //console.log('this is reviews data ', data);
       this.setState({
         reviews: data.data
       })
@@ -66,8 +51,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    var isbn = 10;
-    this.getInventory(isbn);
+    var isbn = 16;
     this.getTitleAndAuthor(isbn);
     this.getReviews(isbn);
   }
@@ -77,6 +61,7 @@ class App extends React.Component {
     return (
       <div>
         <div><Header titleAndAuthor = {this.state.titleAndAuthor} reviews = {this.state.reviews}/></div>
+        <div><Inventory/></div>
         <div><Trial/></div>
       </div>
     );
