@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static('client/dist'))
 
-app.get('/getInventory/:id', (req, res) => {
+app.get('/formats/:id', (req, res) => {
   var id = req.params.id || 1;
   Books.findOne({isbn: id}, (err, bookInfo) => {
     if (err) {

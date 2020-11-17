@@ -7,6 +7,7 @@ import Trial from './components/trial.jsx';
 import Header from './components/header.jsx';
 import Inventory from './components/inventory.jsx';
 import Radiobuttons from './components/radiobuttons.jsx';
+import Footer from './components/footer.jsx';
 
 
 
@@ -66,6 +67,7 @@ class App extends React.Component {
         <div><Header titleAndAuthor = {this.state.titleAndAuthor} reviews = {this.state.reviews}/></div>
         <div><Inventory/></div>
         <div><Radiobuttons/></div>
+        <div><Footer/></div>
         <div><Trial/></div>
       </div>
     );

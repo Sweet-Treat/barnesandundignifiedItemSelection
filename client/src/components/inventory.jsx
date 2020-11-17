@@ -20,7 +20,7 @@ class Inventory extends React.Component {
   getInventory(isbn) {
     axios({
       method: 'get',
-      url: `/getInventory/${isbn}`
+      url: `/formats/${isbn}`
     })
     .then((data) => {
       //console.log('this is inventory data ', data);
