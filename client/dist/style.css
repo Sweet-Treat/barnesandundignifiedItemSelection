@@ -183,3 +183,33 @@
 .view-all-inventory:hover{
   text-decoration: underline;
 }
+
+.footer-text{
+  margin-left: 5px;
+  font-family: Lato, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.footer-details{
+  margin-left: 20px;
+}
+
+.footer-details:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer-nook{
+  font-size: 1.0625rem;
+  line-height: 1.25;
+  margin-bottom: .75rem;
+  font-family: Lato,sans-serif;
+  font-weight: 400;
+}
+
+.footer-details-nook:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
