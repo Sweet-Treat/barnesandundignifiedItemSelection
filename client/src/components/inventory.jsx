@@ -24,7 +24,7 @@ class Inventory extends React.Component {
             <span className ="percentage-discount"> Save {this.props.currentDiscount}% </span>
           </span>}
           <div>
-            <Options inventory = {this.props.inventory} currentOption = {this.props.currentOption}/>
+            <Options inventory = {this.props.inventory} currentOption = {this.props.currentOption} handleFormatClick={this.props.handleFormatClick}/>
           </div>
         </div>
       </div>

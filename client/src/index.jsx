@@ -26,6 +26,13 @@ class App extends React.Component {
     this.getInventory = this.getInventory.bind(this);
     this.getTitleAndAuthor = this.getTitleAndAuthor.bind(this);
     this.getReviews = this.getReviews.bind(this);
+    this.handleFormatClick = this.handleFormatClick.bind(this);
+  }
+
+  handleFormatClick(value) {
+    this.setState({
+      currentOption: value
+    })
   }
 
   getInventory(isbn) {
@@ -91,7 +98,7 @@ class App extends React.Component {
     return (
       <div>
         <div><Header titleAndAuthor = {this.state.titleAndAuthor} reviews = {this.state.reviews}/></div>
-        <div><Inventory inventory={this.state.inventory} currentOption={this.state.currentOption} currentName={this.state.currentName} regularPrice={this.state.regularPrice} currentDiscount={this.state.currentDiscount}/></div>
+        <div><Inventory inventory={this.state.inventory} currentOption={this.state.currentOption} currentName={this.state.currentName} regularPrice={this.state.regularPrice} currentDiscount={this.state.currentDiscount} handleFormatClick={this.handleFormatClick}/></div>
         <div><Radiobuttons/></div>
         <div><Footer currentOption={this.state.currentOption}/></div>
         <div><Trial/></div>
