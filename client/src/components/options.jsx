@@ -7,7 +7,7 @@ var Options = (props) => {
       <div className="inventory-container">
         {props.inventory.map((item, index) => {
           return (
-            <div className={`${props.currentOption === index ? "inventory-selected" : "inventory-element"}`}>
+            <div key={index} className={`${props.currentOption === index ? "inventory-selected" : "inventory-element"}`} onClick={() => {props.handleFormatClick(index)}}>
               <div>{item.name}</div>
               <div className="inventory-price">
                 {
