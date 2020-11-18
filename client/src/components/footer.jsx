@@ -6,16 +6,17 @@ import {TiDeviceTablet} from 'react-icons/Ti';
 import {BsGift} from 'react-icons/Bs';
 import {BiSmile} from 'react-icons/Bi';
 
-var Footer = () => {
+var Footer = ({currentOption}) => {
   return (
     <div>
-      <div>
+      {currentOption !== 1 && <div>
+        {console.log('currentOption ', currentOption)}
         <span><RiTruckLine className="footer-truck"/></span>
         <span className="footer-text">Members save with free shipping everyday</span>
         <div className="green-text footer-details">See details</div>
-      </div>
+      </div>}
 
-      <div>
+      {currentOption === 1 && <div>
         <hr class="line-separator"/>
         <span className="footer-nook">Available on Compatible NOOK devices and the free NOOK Apps.</span>
         <AiOutlineInfoCircle className="green-text circle-info"/>
@@ -37,7 +38,7 @@ var Footer = () => {
           <span className="footer-nook">LEND ME®</span>
           <span className="green-text footer-details-nook">See Details</span>
         </div>
-      </div>
+      </div>}
     </div>
   )
 }

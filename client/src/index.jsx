@@ -93,7 +93,7 @@ class App extends React.Component {
         <div><Header titleAndAuthor = {this.state.titleAndAuthor} reviews = {this.state.reviews}/></div>
         <div><Inventory inventory={this.state.inventory} currentOption={this.state.currentOption} currentName={this.state.currentName} regularPrice={this.state.regularPrice} currentDiscount={this.state.currentDiscount}/></div>
         <div><Radiobuttons/></div>
-        <div><Footer/></div>
+        <div><Footer currentOption={this.state.currentOption}/></div>
         <div><Trial/></div>
       </div>
     );
