@@ -200,3 +200,16 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+.footer-nook{
+  font-size: 1.0625rem;
+  line-height: 1.25;
+  margin-bottom: .75rem;
+  font-family: Lato,sans-serif;
+  font-weight: 400;
+}
+
+.footer-details-nook:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
