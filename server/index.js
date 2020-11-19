@@ -14,8 +14,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static('client/dist'))
 
-app.get('/formats/:id', (req, res) => {
-  var id = req.params.id || 1;
+app.get('/product/:id/formats', (req, res) => {
+  var id = req.params.id || '1';
   Books.findOne({isbn: id}, (err, bookInfo) => {
     if (err) {
       console.log('ISBN inventory does not exist')

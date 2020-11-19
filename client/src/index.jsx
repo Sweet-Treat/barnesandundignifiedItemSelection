@@ -38,15 +38,15 @@ class App extends React.Component {
   getInventory(isbn) {
     axios({
       method: 'get',
-      url: `/formats/${isbn}`
+      url: `/product/${isbn}/formats`
     })
     .then((data) => {
       //console.log('this is inventory data ', data);
       this.setState({
-        inventory: data.data.options,
-        currentName: data.data.options[0].name,
-        regularPrice: data.data.options[0].price,
-        currentDiscount: data.data.options[0].discount
+        inventory: data.data.formats,
+        currentName: data.data.formats[0].name,
+        regularPrice: data.data.formats[0].price,
+        currentDiscount: data.data.formats[0].discount
       })
     })
     .catch((err) => {
@@ -87,7 +87,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    var isbn = 16;
+    var isbn = '16';
     this.getInventory(isbn);
     this.getTitleAndAuthor(isbn);
     this.getReviews(isbn);

@@ -44,7 +44,7 @@ function randomDataGenerator(records) {
   for (var i = 0; i < records; i++) {
     var currentObject = {};
     // generate a unique isbn for the current collection record
-    currentObject.isbn = i;
+    currentObject.isbn = i.toString();
 
     // generate a title for the current collection record
     // var title = '';
@@ -63,18 +63,18 @@ function randomDataGenerator(records) {
     // currentObject.reviews.number = getRandomInt(1, 1500);
 
     // create an objects array
-    currentObject.options =[];
-    currentObject.options[0] = {};
-    currentObject.options[0].name = 'Hardcover';
-    currentObject.options[0].price = getRandomInt(5, 35);
-    currentObject.options[0].discount = getRandomInt(0, 20);
-    currentObject.options[0].buyOnlinePickUpInStore = getRandomBool();
+    currentObject.formats =[];
+    currentObject.formats[0] = {};
+    currentObject.formats[0].name = 'Hardcover';
+    currentObject.formats[0].price = getRandomInt(5, 35);
+    currentObject.formats[0].discount = getRandomInt(0, 20);
+    currentObject.formats[0].buyOnlinePickUpInStore = getRandomBool();
 
-    currentObject.options[1] = {};
-    currentObject.options[1].name = 'Nook Book';
-    currentObject.options[1].price = getRandomInt(5, 35);
-    currentObject.options[1].discount = getRandomInt(0, 20);
-    currentObject.options[1].buyOnlinePickUpInStore = getRandomBool();
+    currentObject.formats[1] = {};
+    currentObject.formats[1].name = 'Nook Book';
+    currentObject.formats[1].price = getRandomInt(5, 35);
+    currentObject.formats[1].discount = getRandomInt(0, 20);
+    currentObject.formats[1].buyOnlinePickUpInStore = getRandomBool();
 
     if (getRandomBool()) {
       var paperbackOption = {};
@@ -82,7 +82,7 @@ function randomDataGenerator(records) {
       paperbackOption.price = getRandomInt(5, 35);
       paperbackOption.discount = getRandomInt(0, 20);
       paperbackOption.buyOnlinePickUpInStore = getRandomBool();
-      currentObject.options.push(paperbackOption);
+      currentObject.formats.push(paperbackOption);
     }
 
     if (getRandomBool()) {
@@ -91,7 +91,7 @@ function randomDataGenerator(records) {
       signedbookOption.price = getRandomInt(5, 35);
       signedbookOption.discount = getRandomInt(0, 20);
       signedbookOption.buyOnlinePickUpInStore = getRandomBool();
-      currentObject.options.push(signedbookOption);
+      currentObject.formats.push(signedbookOption);
     }
 
     if (getRandomBool()) {
@@ -100,7 +100,7 @@ function randomDataGenerator(records) {
       audioCDOption.price = getRandomInt(5, 35);
       audioCDOption.discount = getRandomInt(0, 20);
       audioCDOption.buyOnlinePickUpInStore = getRandomBool();
-      currentObject.options.push(audioCDOption);
+      currentObject.formats.push(audioCDOption);
     }
     testData.push(currentObject);
     //console.log('i',i)
