@@ -3,7 +3,6 @@ import { shallow, mount } from 'enzyme';
 import { spy } from 'sinon';
 
 //import App from '../client/src/app.jsx'
-import Trial from '../client/src/components/trial.jsx'
 import Header from '../client/src/components/header.jsx'
 //import Stars from '../client/src/components/stars.jsx'
 import Inventory from '../client/src/components/inventory.jsx'
@@ -21,14 +20,6 @@ describe('Test for tests', () => {
 
 });
 
-
-// describe('Trial test', () => {
-//   it('should have text in a div', () => {
-//     const wrapper = shallow(<Trial/>);
-//     expect(wrapper.text()).toBe('Hello from React from Trial');
-//   })
-// })
-
 // test for the App Component
 // describe('The App component render all the child components', () => {
 //   it('should have a Header Component' , () => {
@@ -40,7 +31,7 @@ describe('Test for tests', () => {
 
 
 
-describe('Test for header component', () => {
+describe('Test for Header component', () => {
   var titleAndAuthor, reviews, wrapper;
 
   beforeEach(() => {

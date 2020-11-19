@@ -100,7 +100,6 @@ class App extends React.Component {
         <div><Inventory inventory={this.state.inventory} currentOption={this.state.currentOption} currentName={this.state.currentName} regularPrice={this.state.regularPrice} currentDiscount={this.state.currentDiscount} handleFormatClick={this.handleFormatClick}/></div>
         <div><Radiobuttons/></div>
         <div><Footer currentOption={this.state.currentOption}/></div>
-        <div><Trial/></div>
       </div>
     );
   }
