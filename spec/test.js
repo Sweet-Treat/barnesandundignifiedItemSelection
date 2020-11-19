@@ -7,6 +7,7 @@ import Header from '../client/src/components/header.jsx';
 //import Stars from '../client/src/components/stars.jsx';
 import Inventory from '../client/src/components/inventory.jsx';
 import Options from '../client/src/components/options.jsx';
+import Footer from '../client/src/components/footer.jsx';
 
 describe('Test for tests', () => {
   it('should be true', () => {
@@ -25,7 +26,6 @@ describe('Test for tests', () => {
 //     const wrapper = mount(<App/>);
 //     expect(wrapper.find(Header).length).toEqual(1);
 //   })
-
 // })
 
 
@@ -124,3 +124,38 @@ describe('Test the Option component, a child of the Inventory component', () => 
     expect(wrapper.find('.inventory-price')).toHaveLength(2);
   })
 });
+
+describe('Test the Footer component, in case we have a Nook Book', () => {
+  var currentOption, wrapper;
+
+  beforeEach(() => {
+    currentOption = 1;
+
+    wrapper = shallow(<Footer currentOption={currentOption} />);
+  });
+
+  it('it should have specific Nook Book footer text', () => {
+    expect(wrapper.find('.footer-nook')).toHaveLength(3);
+  });
+  it('it should not have general other format footer text', () => {
+    expect(wrapper.find('.footer-text')).toHaveLength(0);
+  })
+});
+
+describe('Test the Footer component, in case it is not a Nook Book', () => {
+  var currentOption, wrapper;
+
+  beforeEach(() => {
+    currentOption = 0;
+
+    wrapper = shallow(<Footer currentOption={currentOption} />);
+  });
+
+  it('it should have specific Nook Book footer text', () => {
+    expect(wrapper.find('.footer-nook')).toHaveLength(0);
+  });
+  it('it should not have general other format footer text', () => {
+    expect(wrapper.find('.footer-text')).toHaveLength(1);
+  })
+});
+
