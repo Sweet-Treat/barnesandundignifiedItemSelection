@@ -43,8 +43,20 @@ function randomDataGenerator(records) {
   var testData = [];
   for (var i = 0; i < records; i++) {
     var currentObject = {};
+
     // generate a unique isbn for the current collection record
-    currentObject.isbn = i.toString();
+    // hard code the first 10 ISBNs to align with other
+    if ( i === 0) { currentObject.isbn = "9781524763169"; }
+    else if ( i === 1) { currentObject.isbn = "9781571311931"; }
+    else if ( i === 2) { currentObject.isbn = "9780765326386"; }
+    else if ( i === 3) { currentObject.isbn = "9780316187183"; }
+    else if ( i === 4) { currentObject.isbn = "9780670020553"; }
+    else if ( i === 5) { currentObject.isbn = "9780765386489"; }
+    else if ( i === 6) { currentObject.isbn = "9781250088482"; }
+    else if ( i === 7) { currentObject.isbn = "9781524796372"; }
+    else if ( i === 8) { currentObject.isbn = "9780062667632"; }
+    else if ( i === 9) { currentObject.isbn = "9781982157999"; }
+    else { currentObject.isbn = i.toString(); }
 
     // generate a title for the current collection record
     // var title = '';
