@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { spy } from 'sinon';
 
-//import App from '../client/src/app.jsx';
+import App from '../client/src/app.jsx';
 import Header from '../client/src/components/header.jsx';
 //import Stars from '../client/src/components/stars.jsx';
 import Inventory from '../client/src/components/inventory.jsx';
@@ -112,7 +112,9 @@ describe('Test the Option component, a child of the Inventory component', () => 
       }
     ];
     currentOption = 0;
-    handleFormatClick = spy();
+    //handleFormatClick = spy();
+    handleFormatClick = jest.fn();
+ //   var mockClick = jest.fn();
 
     wrapper = shallow(<Options inventory={inventory} currentOption={currentOption} handleFormatClick={handleFormatClick}/>);
   });
@@ -123,6 +125,23 @@ describe('Test the Option component, a child of the Inventory component', () => 
   it('it should have two formats', () => {
     expect(wrapper.find('.inventory-price')).toHaveLength(2);
   })
+//   it('clicking an option should select it', () => {
+//     //var formatType = wrapper.find('.inventory-price');
+//     //var formatType = wrapper.find('.inventory-selected');
+//     var formatType = wrapper.find('.inventory-element');
+
+//     //var formatType = wrapper.findWhere( (node) => { node.key() === 0 });
+//     //console.log('formatType ', formatType);
+//     formatType.simulate('click');
+
+//     // formatType1.simulate('click');
+//     // formatType2.simulate('click');
+//     //console.log(wrapper.find('.inventory-selected')
+//     expect(handleFormatClick.mock.calls.length)toEqual(1);
+// //    expect(wrapper.find('.inventory-selected').render().text()).toBe('Nook Book$7.35');
+//   })
+
+
 });
 
 describe('Test the Footer component, in case we have a Nook Book', () => {
@@ -159,3 +178,22 @@ describe('Test the Footer component, in case it is not a Nook Book', () => {
   })
 });
 
+
+// make tests on App
+describe('Test on App component', () => {
+  var wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<App />);
+  });
+
+  it('it should have a Header component', () => {
+    expect(wrapper.containsMatchingElement(<Header />)).toEqual(true);
+  });
+  it('it should have a Inventory component', () => {
+    expect(wrapper.containsMatchingElement(<Inventory />)).toEqual(true);
+  });
+  it('it should have a Footer component', () => {
+    expect(wrapper.containsMatchingElement(<Footer />)).toEqual(true);
+  });
+});
