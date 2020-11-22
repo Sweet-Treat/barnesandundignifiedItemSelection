@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { spy } from 'sinon';
+import mockAxios from "axios";
+import 'regenerator-runtime/runtime';
 
 import App from '../client/src/app.jsx';
 import Header from '../client/src/components/header.jsx';
@@ -8,6 +10,7 @@ import Header from '../client/src/components/header.jsx';
 import Inventory from '../client/src/components/inventory.jsx';
 import Options from '../client/src/components/options.jsx';
 import Footer from '../client/src/components/footer.jsx';
+import getInventory from '../client/src/lib/getInventory.js';
 
 describe('Test for tests', () => {
   it('should be true', () => {
@@ -180,20 +183,123 @@ describe('Test the Footer component, in case it is not a Nook Book', () => {
 
 
 // make tests on App
-describe('Test on App component', () => {
-  var wrapper;
+// describe('Test on App component', () => {
+//   var wrapper;
 
-  beforeEach(() => {
-    wrapper = shallow(<App />);
+//   beforeEach(() => {
+//     wrapper = shallow(<App />);
+//   });
+
+//   it('it should have a Header component', () => {
+//     expect(wrapper.containsMatchingElement(<Header />)).toEqual(true);
+//   });
+//   it('it should have a Inventory component', () => {
+//     expect(wrapper.containsMatchingElement(<Inventory />)).toEqual(true);
+//   });
+//   it('it should have a Footer component', () => {
+//     expect(wrapper.containsMatchingElement(<Footer />)).toEqual(true);
+//   });
+// });
+
+
+// make tests on App - with lifecyle
+// describe('Test on App component with lifecycle events', () => {
+
+//   it('it calls component didMount', async () => {
+//     mockAxios.get.mockImplementationOnce(() => Promise.resolve({ data: {
+//       "titleAndAuthor": {
+//           "title": "A Promised Land",
+//           "author": "Barack Obama"
+//       },
+//       "reviews": {
+//           "totalReviews": 27,
+//           "avgRating": 1.9
+//       },
+//       "formats": [
+//           {
+//               "name": "Hardcover",
+//               "price": 28,
+//               "discount": 4,
+//               "buyOnlinePickUpInStore": false
+//           },
+//           {
+//               "name": "Nook Book",
+//               "price": 25,
+//               "discount": 19,
+//               "buyOnlinePickUpInStore": false
+//           },
+//           {
+//               "name": "Audio CD",
+//               "price": 17,
+//               "discount": 1,
+//               "buyOnlinePickUpInStore": true
+//           }
+//         ]
+//       }
+//     })
+//   )
+//     var result = await getInventory();
+//     console.log('result', result);
+//     var wrapper = shallow(<App />);
+//     expect(wrapper.containsMatchingElement(<Header />)).toEqual(true);
+
+//     // var bookDetails = getInventory();
+//     // console.log(bookDetails);
+
+//   });
+// });
+
+
+describe('Test on App component with lifecycle events', () => {
+
+  beforeEach( async () => {
+    mockAxios.get.mockImplementationOnce(() => Promise.resolve({ data: {
+      "titleAndAuthor": {
+          "title": "A Promised Land",
+          "author": "Barack Obama"
+      },
+      "reviews": {
+          "totalReviews": 27,
+          "avgRating": 1.9
+      },
+      "formats": [
+          {
+              "name": "Hardcover",
+              "price": 28,
+              "discount": 4,
+              "buyOnlinePickUpInStore": false
+          },
+          {
+              "name": "Nook Book",
+              "price": 25,
+              "discount": 19,
+              "buyOnlinePickUpInStore": false
+          },
+          {
+              "name": "Audio CD",
+              "price": 17,
+              "discount": 1,
+              "buyOnlinePickUpInStore": true
+          }
+      ]
+    }}))
   });
 
-  it('it should have a Header component', () => {
+
+  it('it should have a Header component', async () => {
+   // var result = await getInventory();
+    var wrapper = shallow(<App />);
+    //expect(wrapper.state('regularPrice')).to.equal(10);
     expect(wrapper.containsMatchingElement(<Header />)).toEqual(true);
   });
-  it('it should have a Inventory component', () => {
+  it('it should have a Inventory component', async () => {
+    //var result = await getInventory();
+    var wrapper = shallow(<App />);
     expect(wrapper.containsMatchingElement(<Inventory />)).toEqual(true);
   });
-  it('it should have a Footer component', () => {
+  it('it should have a Footer component', async () => {
+    //var result = await getInventory();
+    var wrapper = shallow(<App />);
     expect(wrapper.containsMatchingElement(<Footer />)).toEqual(true);
   });
 });
