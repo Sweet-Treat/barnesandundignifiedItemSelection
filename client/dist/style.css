@@ -213,3 +213,28 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+.tooltip-wrapper{
+  width: 250px;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  padding: 10px;
+}
+
+.tooltip-wrapper div{
+  display: inline-block;
+}
+
+.progress-bar {
+  position: relative;
+  height: 10px;
+  width: 200px;
+  background: #cccccc;
+}
+
+.filler {
+  position: absolute;
+  background: #347d56;
+  height: 100%;
+}

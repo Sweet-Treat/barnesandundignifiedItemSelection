@@ -1,5 +1,7 @@
 import React from 'react';
 import Stars from './stars.jsx';
+import StarsTooltip from './starsTooltip.jsx';
+
 
 var Header = (props) => {
   return (
@@ -13,6 +15,7 @@ var Header = (props) => {
         <span> <Stars reviews = {props.reviews}/> </span>
         <span className="rating green-text"> {props.reviews.avgRating} ({props.reviews.totalReviews}) </span>
       </div >
+      <StarsTooltip/>
       <hr class="line-separator"/>
     </div>
   );
