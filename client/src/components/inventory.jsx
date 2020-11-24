@@ -3,10 +3,17 @@ import React from 'react';
 import axios from 'axios';
 
 import Options from './options.jsx';
+import Modal from './modal.jsx';
+
 
 class Inventory extends React.Component {
   constructor(props) {
     super(props);
+    this.handleAllInventoryClick = this.handleAllInventoryClick.bind(this);
+  }
+
+  handleAllInventoryClick() {
+    console.log('button has been clicked');
   }
 
   render() {
@@ -24,7 +31,8 @@ class Inventory extends React.Component {
             <span className ="percentage-discount"> Save {this.props.currentDiscount}% </span>
           </span>}
           <div>
-            <Options inventory = {this.props.inventory} currentOption = {this.props.currentOption} handleFormatClick={this.props.handleFormatClick}/>
+            <Options inventory = {this.props.inventory} currentOption = {this.props.currentOption} handleFormatClick={this.props.handleFormatClick} handleAllInventoryClick={this.handleAllInventoryClick}/>
+            <Modal/>
           </div>
         </div>
       </div>
