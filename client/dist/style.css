@@ -281,3 +281,27 @@
 .display-block {
   display: block;
 }
+
+.modal-format {
+  padding: 10px;
+  color: #347d56
+}
+
+.modal-format-selected {
+  padding: 5px;
+  color: black;
+  border-style: solid;
+  border-color: #cccccc
+}
+
+.modal-information-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-information-children {
+  display: flex;
+  flex-direction: column;
+
+}
