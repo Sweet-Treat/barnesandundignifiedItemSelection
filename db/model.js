@@ -26,10 +26,39 @@ var createSummaryReview = (data) => {
     }
     reviewSum += data[i].rating;
   }
+
+  var rating1 = {
+    stars: 1,
+    percentage: Number((reviewsCount.star1 / data.length).toFixed(2))*100,
+    numberReviews: reviewsCount.star1
+  }
+  var rating2 = {
+    stars: 2,
+    percentage: Number((reviewsCount.star2 / data.length).toFixed(2))*100,
+    numberReviews: reviewsCount.star2
+  }
+  var rating3 = {
+    stars: 3,
+    percentage: Number((reviewsCount.star3 / data.length).toFixed(2))*100,
+    numberReviews: reviewsCount.star3
+  }
+  var rating4 = {
+    stars: 4,
+    percentage: Number((reviewsCount.star4 / data.length).toFixed(2))*100,
+    numberReviews: reviewsCount.star4
+  }
+  var rating5 = {
+    stars: 5,
+    percentage: Number((reviewsCount.star5 / data.length).toFixed(2))*100,
+    numberReviews: reviewsCount.star5
+  }
+
+
   var result = {
     totalReviews: data.length,
     avgRating: reviewSum/ data.length,
-    reviewsCount: reviewsCount
+    starsEach: [rating5, rating4, rating3, rating2, rating1]
+
   }
   return result;
 }

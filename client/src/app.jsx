@@ -10,7 +10,6 @@ import Footer from './components/footer.jsx';
 import getInventory from './lib/getInventory.js';
 
 
-
 class App extends React.Component {
   constructor (props) {
     super (props);
@@ -21,77 +20,29 @@ class App extends React.Component {
       regularPrice: 999,
       currentDiscount: 999,
       titleAndAuthor: {},
-      reviews: {}
+      reviews: {
+        starsEach: []
+      }
     }
     this.getInventory = getInventory;
-    // this.getTitleAndAuthor = this.getTitleAndAuthor.bind(this);
-    // this.getReviews = this.getReviews.bind(this);
     this.handleFormatClick = this.handleFormatClick.bind(this);
   }
 
   handleFormatClick(value) {
     this.setState({
-      currentOption: value
+      currentOption: value,
+      currentName: this.state.inventory[value].name,
+      regularPrice: this.state.inventory[value].price,
+      currentDiscount: this.state.inventory[value].discount
     })
+    console.log('this.state.currentOption', this.state.currentOption);
   }
-
-  // getInventory(isbn) {
-  //   axios({
-  //     method: 'get',
-  //     url: `/product/${isbn}/formats`
-  //   })
-  //   .then((data) => {
-  //     console.log('this is inventory data ', data);
-  //     this.setState({
-  //       inventory: data.data.formats,
-  //       currentName: data.data.formats[0].name,
-  //       regularPrice: data.data.formats[0].price,
-  //       currentDiscount: data.data.formats[0].discount,
-  //       reviews: data.data.reviews,
-  //       titleAndAuthor: data.data.titleAndAuthor
-  //     })
-  //   })
-  //   .catch((err) => {
-  //     console.log('there was an error during the axios inventory get request: err ', err)
-  //   })
-  // }
-
-  // getTitleAndAuthor(isbn) {
-  //   axios({
-  //     method: 'get',
-  //     url: `/product/${isbn}`
-  //   })
-  //   .then((data) => {
-  //     //console.log('this is product data ', data);
-  //     this.setState({
-  //     })
-  //   })
-  //   .catch((err) => {
-  //     console.log('there was an error during the axios title get request: err ', err)
-  //   })
-  // }
-
-  // getReviews(isbn) {
-  //   axios({
-  //     method: 'get',
-  //     url: `/reviewssummary/${isbn}`
-  //   })
-  //   .then((data) => {
-  //     //console.log('this is reviews data ', data);
-  //     this.setState({
-  //     })
-  //   })
-  //   .catch((err) => {
-  //     console.log('there was an error during the axios reviews get request: err ', err)
-  //   })
-  // }
 
   componentDidMount() {
     var isbn = '9781524763169';
     this.getInventory(isbn, (err, data) => {
       if (err) {console.log('there was an error in the getInventory get request')}
       else {
-        //console.log('this is inventory data ', data);
         this.setState({
           inventory: data.data.formats,
           currentName: data.data.formats[0].name,
@@ -102,8 +53,6 @@ class App extends React.Component {
         })
       }
     });
-  // this.getTitleAndAuthor(isbn);
-  // this.getReviews(isbn);
   }
 
 

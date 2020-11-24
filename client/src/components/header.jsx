@@ -15,7 +15,7 @@ var Header = (props) => {
         <span> <Stars reviews = {props.reviews}/> </span>
         <span className="rating green-text"> {props.reviews.avgRating} ({props.reviews.totalReviews}) </span>
       </div >
-      <StarsTooltip/>
+      <StarsTooltip starRating = {props.reviews.starsEach}/>
       <hr class="line-separator"/>
     </div>
   );
