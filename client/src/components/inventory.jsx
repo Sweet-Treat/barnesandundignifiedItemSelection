@@ -17,7 +17,7 @@ class Inventory extends React.Component {
 
   handleAllInventoryClick() {
     this.setState({
-      showModal: true
+      showModal: !this.state.showModal
     })
     console.log('state', this.state);
     console.log('button has been clicked');
@@ -39,7 +39,7 @@ class Inventory extends React.Component {
           </span>}
           <div>
             <Options inventory = {this.props.inventory} currentOption = {this.props.currentOption} handleFormatClick={this.props.handleFormatClick} handleAllInventoryClick={this.handleAllInventoryClick}/>
-            {this.state.showModal && <Modal className="modal display-block"/>}
+            {this.state.showModal && <Modal className="modal display-block" handleAllInventoryClick={this.handleAllInventoryClick}/>}
           </div>
         </div>
       </div>

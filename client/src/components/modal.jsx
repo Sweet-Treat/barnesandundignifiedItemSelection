@@ -4,7 +4,8 @@ var Modal = (props) => {
   return (
     <div className='modal-main'>
       <div>
-        Hello from Modal
+        <span className="modal-title"> All Formats & Editions </span>
+        <button onClick={props.handleAllInventoryClick}>x</button>
       </div>
     </div>
   )
