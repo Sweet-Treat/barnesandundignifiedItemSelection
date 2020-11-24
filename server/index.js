@@ -4,17 +4,14 @@ const axios = require('axios');
 const app = express();
 const port = 3001;
 
+const Model = require('../db/model.js');
+
 const Books = require('../db/index.js');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-// serve the static files
-
-//create a test hello world response to the root endpoint to check if everything works properly
-
 app.use(express.static('client/dist'))
-
 
 
 // try running a get request on someone elses endpoint - do an axios request
@@ -33,7 +30,7 @@ function getSummaryReview(isbn, cb) {
   console.log('hello from get summary reviews')
   axios({
     method: 'get',
-    url: `http://localhost:8000/reviewssummary/${isbn}`
+    url: `http://localhost:8000/books/${isbn}/reviews`
   })
     .then((data) => cb(null, data.data))
     .catch(() => cb(err))
@@ -43,14 +40,13 @@ app.get('/product/:id/formats', (req, res) => {
   var id = req.params.id || '22801693950634';
   bookInfo = {}
   getTitleAndAuthor(id, (err, data) => {
-    //console.log('data ', data);
     bookInfo.titleAndAuthor = {
       title: data.bookTitle,
       author: data.author
     };
     getSummaryReview(id, (err, data) => {
-      //console.log('data ', data);
-      bookInfo.reviews = data;
+      var summaryReview = Model.createSummaryReview(data)
+      bookInfo.reviews = summaryReview;
       Books.findOne({isbn: id}, (err, results) => {
         if (err) {
           console.log('ISBN inventory does not exist')
@@ -58,7 +54,6 @@ app.get('/product/:id/formats', (req, res) => {
         } else {
           console.log('ISBN inventory exists')
           bookInfo.formats = results.formats;
-          // console.log('bookInfo', bookInfo)
           res.send(bookInfo);
         }
       })
