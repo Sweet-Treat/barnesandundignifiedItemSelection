@@ -224,6 +224,7 @@
 
 .tooltip-wrapper div{
   display: inline-block;
+  font-family: Lato,sans-serif;
 }
 
 .progress-bar {
