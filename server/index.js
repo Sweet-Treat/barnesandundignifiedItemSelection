@@ -4,54 +4,14 @@ const axios = require('axios');
 const app = express();
 const port = 3001;
 
+const Model = require('../db/model.js');
+
 const Books = require('../db/index.js');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-// serve the static files
-
-//create a test hello world response to the root endpoint to check if everything works properly
-
 app.use(express.static('client/dist'))
-
-
-// create Summary review
-function createSummaryReview(data) {
-  var reviewSum = 0;
-  var reviewsCount = {
-    star1: 0,
-    star2: 0,
-    star3: 0,
-    star4: 0,
-    star5: 0
-  }
-  var totalReviews = 0;
-  var totalRating = 0;
-  // loop over the array
-  for (var i = 0; i < data.length; i++) {
-    if (data[i].rating === 1) {
-      reviewsCount.star1++;
-
-    } else if (data[i].rating === 2) {
-      reviewsCount.star2++;
-    } else if (data[i].rating === 3) {
-      reviewsCount.star3++;
-    } else if (data[i].rating === 4) {
-      reviewsCount.star4++;
-    } else if (data[i].rating === 5) {
-      reviewsCount.star5++;
-    }
-    reviewSum += data[i].rating;
-  }
-  var result = {
-    totalReviews: data.length,
-    avgRating: reviewSum/ data.length,
-    reviewsCount: reviewsCount
-  }
-  return result;
-}
-
 
 
 // try running a get request on someone elses endpoint - do an axios request
@@ -80,15 +40,12 @@ app.get('/product/:id/formats', (req, res) => {
   var id = req.params.id || '22801693950634';
   bookInfo = {}
   getTitleAndAuthor(id, (err, data) => {
-    //console.log('data ', data);
     bookInfo.titleAndAuthor = {
       title: data.bookTitle,
       author: data.author
     };
     getSummaryReview(id, (err, data) => {
-      //console.log('data ', data);
-      var summaryReview = createSummaryReview(data);
-      console.log('summaryReview here', summaryReview)
+      var summaryReview = Model.createSummaryReview(data)
       bookInfo.reviews = summaryReview;
       Books.findOne({isbn: id}, (err, results) => {
         if (err) {
@@ -97,7 +54,6 @@ app.get('/product/:id/formats', (req, res) => {
         } else {
           console.log('ISBN inventory exists')
           bookInfo.formats = results.formats;
-          // console.log('bookInfo', bookInfo)
           res.send(bookInfo);
         }
       })
