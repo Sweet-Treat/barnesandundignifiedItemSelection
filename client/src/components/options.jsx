@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Modal from './modal.jsx';
 
 var Options = (props) => {
   return (
@@ -20,6 +20,7 @@ var Options = (props) => {
         }
       </div>
       <div className="view-all-inventory green-text"> View all Available Formats & Editions </div>
+      <Modal/>
     </div>
 
   )
