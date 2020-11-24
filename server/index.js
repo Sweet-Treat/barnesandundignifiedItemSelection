@@ -16,6 +16,43 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('client/dist'))
 
 
+// create Summary review
+function createSummaryReview(data) {
+  var reviewSum = 0;
+  var reviewsCount = {
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0
+  }
+  var totalReviews = 0;
+  var totalRating = 0;
+  // loop over the array
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].rating === 1) {
+      reviewsCount.star1++;
+
+    } else if (data[i].rating === 2) {
+      reviewsCount.star2++;
+    } else if (data[i].rating === 3) {
+      reviewsCount.star3++;
+    } else if (data[i].rating === 4) {
+      reviewsCount.star4++;
+    } else if (data[i].rating === 5) {
+      reviewsCount.star5++;
+    }
+    reviewSum += data[i].rating;
+  }
+  var result = {
+    totalReviews: data.length,
+    avgRating: reviewSum/ data.length,
+    reviewsCount: reviewsCount
+  }
+  return result;
+}
+
+
 
 // try running a get request on someone elses endpoint - do an axios request
 function getTitleAndAuthor(isbn, cb) {
@@ -33,7 +70,7 @@ function getSummaryReview(isbn, cb) {
   console.log('hello from get summary reviews')
   axios({
     method: 'get',
-    url: `http://localhost:8000/reviewssummary/${isbn}`
+    url: `http://localhost:8000/books/${isbn}/reviews`
   })
     .then((data) => cb(null, data.data))
     .catch(() => cb(err))
@@ -50,7 +87,9 @@ app.get('/product/:id/formats', (req, res) => {
     };
     getSummaryReview(id, (err, data) => {
       //console.log('data ', data);
-      bookInfo.reviews = data;
+      var summaryReview = createSummaryReview(data);
+      console.log('summaryReview here', summaryReview)
+      bookInfo.reviews = summaryReview;
       Books.findOne({isbn: id}, (err, results) => {
         if (err) {
           console.log('ISBN inventory does not exist')
