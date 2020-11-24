@@ -10,6 +10,7 @@ var  StarsTooltip = (props) => {
           <ProgressBar rating ={item}/>
         )
       })}
+      <input type="submit" value={`Read ${props.totalReviews} reviews`} className="read-reviews"/>
     </div>
   )
 }
