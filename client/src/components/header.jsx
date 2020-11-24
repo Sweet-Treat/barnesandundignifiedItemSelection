@@ -1,6 +1,7 @@
 import React from 'react';
 import Stars from './stars.jsx';
 import StarsTooltip from './starsTooltip.jsx';
+import Tippy from '@tippy.js/react';
 
 
 var Header = (props) => {
@@ -11,11 +12,12 @@ var Header = (props) => {
         <span className="book-author">by</span>
         <span className="book-author green-text"> {props.titleAndAuthor.author} </span>
       </div>
-      <div>
-        <span> <Stars reviews = {props.reviews}/> </span>
-        <span className="rating green-text"> {props.reviews.avgRating} ({props.reviews.totalReviews}) </span>
-      </div >
-      <StarsTooltip starRating = {props.reviews.starsEach}/>
+      <Tippy content={<StarsTooltip data-tip="tooltip" starRating = {props.reviews.starsEach}/>}>
+        <div>
+          <span> <Stars reviews = {props.reviews}/> </span>
+          <span className="rating green-text"> {props.reviews.avgRating} ({props.reviews.totalReviews}) </span>
+        </div >
+      </Tippy>
       <hr class="line-separator"/>
     </div>
   );

@@ -10,11 +10,6 @@ var  StarsTooltip = (props) => {
           <ProgressBar rating ={item}/>
         )
       })}
-      {/* <ProgressBar rating ={props.reviews.rating5}/>
-      <ProgressBar rating ={props.reviews.rating4}/>
-      <ProgressBar rating ={props.reviews.rating3}/>
-      <ProgressBar rating ={props.reviews.rating2}/>
-      <ProgressBar rating ={props.reviews.rating1}/> */}
     </div>
   )
 }

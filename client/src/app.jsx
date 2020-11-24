@@ -35,7 +35,6 @@ class App extends React.Component {
       regularPrice: this.state.inventory[value].price,
       currentDiscount: this.state.inventory[value].discount
     })
-    console.log('this.state.currentOption', this.state.currentOption);
   }
 
   componentDidMount() {
