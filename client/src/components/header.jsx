@@ -12,7 +12,7 @@ var Header = (props) => {
         <span className="book-author">by</span>
         <span className="book-author green-text"> {props.titleAndAuthor.author} </span>
       </div>
-      <Tippy content={<StarsTooltip data-tip="tooltip" starRating = {props.reviews.starsEach} totalReviews={props.reviews.totalReviews}/>}>
+      <Tippy interactive={true} content={<StarsTooltip data-tip="tooltip" starRating = {props.reviews.starsEach} totalReviews={props.reviews.totalReviews}/>}>
         <div className="author-wrapper">
           <span> <Stars reviews = {props.reviews}/> </span>
           <span className="rating green-text"> {props.reviews.avgRating} ({props.reviews.totalReviews}) </span>

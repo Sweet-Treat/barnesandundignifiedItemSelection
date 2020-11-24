@@ -3,7 +3,7 @@ import { IoIosStar } from 'react-icons/Io';
 
 var ProgressBar = (props) => {
   return (
-    <div>
+    <div className ="progress-bar-wrapper">
       <div>{props.rating.stars}</div>
         <div> <IoIosStar className="star" /> </div>
           <div className="progress-bar">

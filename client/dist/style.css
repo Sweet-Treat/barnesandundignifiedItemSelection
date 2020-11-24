@@ -19,7 +19,7 @@
 }
 
 .author-wrapper{
-  width: 280px;
+  width: 300px;
 }
 
 .rating{
@@ -219,11 +219,12 @@
 }
 
 .tooltip-wrapper{
+  font-family: Lato, sans-serif;
   width: 250px;
   border-color: black;
   border-style: solid;
   border-width: 2px;
-  padding: 10px;
+  padding: 20px;
   background-color: white;
 }
 
@@ -232,11 +233,15 @@
   font-family: Lato,sans-serif;
 }
 
+.progress-bar-wrapper{
+  padding: 2px;
+}
+
 .progress-bar {
   position: relative;
   height: 10px;
   width: 200px;
-  background: #cccccc;
+  background: #f0f0f0;
 }
 
 .filler {
@@ -246,10 +251,11 @@
 }
 
 .read-reviews{
-  position: center;
-  font-family: Lato,sans-serif;
+  font-family: Lato, sans-serif;
   margin: 10px;
   padding: 10px 20px;
   color: white;
   background-color: #3d6db5;
+  text-align:center;
 }
+
