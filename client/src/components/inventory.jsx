@@ -9,10 +9,17 @@ import Modal from './modal.jsx';
 class Inventory extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showModal: false
+    }
     this.handleAllInventoryClick = this.handleAllInventoryClick.bind(this);
   }
 
   handleAllInventoryClick() {
+    this.setState({
+      showModal: true
+    })
+    console.log('state', this.state);
     console.log('button has been clicked');
   }
 
@@ -32,7 +39,7 @@ class Inventory extends React.Component {
           </span>}
           <div>
             <Options inventory = {this.props.inventory} currentOption = {this.props.currentOption} handleFormatClick={this.props.handleFormatClick} handleAllInventoryClick={this.handleAllInventoryClick}/>
-            <Modal/>
+            {this.state.showModal && <Modal className="modal display-block"/>}
           </div>
         </div>
       </div>

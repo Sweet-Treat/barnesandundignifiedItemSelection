@@ -2,7 +2,11 @@ import React from 'react';
 
 var Modal = (props) => {
   return (
-    <div>Hello from Modal</div>
+    <div className='modal-main'>
+      <div>
+        Hello from Modal
+      </div>
+    </div>
   )
 }
 
