@@ -7,6 +7,11 @@ class Modal extends React.Component {
     this.state = {
       currentFormat: 0
     }
+    this.changeCurrentFormat = this.changeCurrentFormat.bind(this);
+  }
+
+  changeCurrentFormat(index) {
+    console.log('somene clicked on ', index);
   }
 
   render() {
@@ -20,7 +25,7 @@ class Modal extends React.Component {
           <div>
             {
               this.props.inventory.map((item, index) => {
-              return (<span className={`${this.state.currentFormat === index ? "modal-format-selected" : "modal-format"}`}>{item.name}</span>)
+              return (<span className={`${this.state.currentFormat === index ? "modal-format-selected" : "modal-format"}`} onClick={this.changeCurrentFormat}>{item.name}</span>)
               })
             }
           </div>
