@@ -11,7 +11,12 @@ class Modal extends React.Component {
   }
 
   changeCurrentFormat(index) {
-    console.log('somene clicked on ', index);
+    console.log('someone clicked on ', index);
+    this.setState({
+      currentFormat: parseInt(index)
+    })
+    console.log('currentFormat', this.state.currentFormat)
+    console.log('currentFormat', typeof this.state.currentFormat)
   }
 
   render() {
@@ -20,12 +25,12 @@ class Modal extends React.Component {
         <div className="modal-main">
           <div className="modal-title-wrapper">
             <span className="modal-title"> All Formats & Editions </span>
-            <button className="modal-button" onClick={this.props.handleAllInventoryClick}>x</button>
+            <span className="modal-button" onClick={this.props.handleAllInventoryClick}>x</span>
           </div>
           <div>
             {
               this.props.inventory.map((item, index) => {
-              return (<span className={`${this.state.currentFormat === index ? "modal-format-selected" : "modal-format"}`} onClick={this.changeCurrentFormat}>{item.name}</span>)
+              return (<button name={index} className={`${this.state.currentFormat === index ? "modal-format-selected" : "modal-format"}`} onClick={(e ) => {this.changeCurrentFormat(e.target.name)}}>{item.name}</button>)
               })
             }
           </div>

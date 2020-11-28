@@ -302,14 +302,14 @@
 
 .modal-format {
   padding: 10px;
-  color: #347d56
+  color: #347d56;
 }
 
 .modal-format-selected {
-  padding: 5px;
+  padding: 10px;
   color: black;
   border-style: solid;
-  border-color: #cccccc
+  border-color: #cccccc;
 }
 
 .modal-information-wrapper {
