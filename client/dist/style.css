@@ -280,10 +280,11 @@
 
 .modal-title-wrapper {
   position:relative;
+  margin: 10px;
 }
 
 .modal-title {
-  padding: 25px;
+  margin: 25px;
   font-family: Poynter,Georgia,serif;
   font-weight: 600;
   line-height: 1.25;
@@ -296,20 +297,38 @@
   right:0;
 }
 
+.modal-button:hover {
+  cursor: pointer;
+}
+
 .display-block {
   display: block;
 }
 
+.format-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .modal-format {
+  border: 5px;
   padding: 10px;
   color: #347d56;
 }
 
+.modal-format:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .modal-format-selected {
+  border: 5px;
   padding: 10px;
   color: black;
   border-style: solid;
   border-color: #cccccc;
+  text-decoration: underline;
 }
 
 .modal-information-wrapper {
@@ -321,8 +340,10 @@
 .modal-information-children {
   display: flex;
   flex-direction: column;
-  padding-top: 25px;
+}
 
+.book-picture{
+  margin: 20px;
 }
 
 .modal-book-title {
@@ -332,6 +353,7 @@
   color: #21282d;
   line-height: 1.25;
   font-size: 1.375rem;
+  margin: 2.5px;
 }
 
 .modal-book-publisher {
@@ -342,4 +364,32 @@
   margin: 0;
   font-size: .9375rem;
   line-height: 1.5;
+  margin: 2.5px;
+}
+
+.modal-product-details-link{
+  margin: 2.5px;
+  font-family: Lato, sans-serif;
+  color: #347d56;
+}
+
+.modal-product-details-link:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button-container-modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-to-wishlist {
+  color: #347d56;
+  font-family: Lato, sans-serif;
+}
+
+.add-to-wishlist:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
