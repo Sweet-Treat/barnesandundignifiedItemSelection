@@ -42,7 +42,9 @@ app.get('/product/:id/formats', (req, res) => {
   getTitleAndAuthor(id, (err, data) => {
     bookInfo.titleAndAuthor = {
       title: data.bookTitle,
-      author: data.author
+      author: data.author,
+      publisher: data.publisherName,
+      publicationDate: data.publicationDate
     };
     getSummaryReview(id, (err, data) => {
       var summaryReview = Model.createSummaryReview(data)

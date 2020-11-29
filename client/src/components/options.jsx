@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 var Options = (props) => {
   return (
     <div>
@@ -19,7 +18,7 @@ var Options = (props) => {
         })
         }
       </div>
-      <div className="view-all-inventory green-text"> View all Available Formats & Editions </div>
+      <div className="view-all-inventory green-text" onClick={props.handleAllInventoryClick}> View all Available Formats & Editions </div>
     </div>
 
   )
