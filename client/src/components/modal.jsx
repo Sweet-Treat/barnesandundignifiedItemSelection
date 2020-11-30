@@ -1,5 +1,5 @@
 import React from 'react';
-import { BiHeartCircle, BiCircle } from 'react-icons/Bi';
+import { BiHeartCircle, BiCircle } from 'react-icons/bi';
 
 
 class Modal extends React.Component {
@@ -12,12 +12,9 @@ class Modal extends React.Component {
   }
 
   changeCurrentFormat(index) {
-    console.log('someone clicked on ', index);
     this.setState({
       currentFormat: parseInt(index)
     })
-    console.log('currentFormat', this.state.currentFormat)
-    console.log('currentFormat', typeof this.state.currentFormat)
   }
 
   render() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoIosStar, IoIosStarHalf } from 'react-icons/Io';
+import { IoIosStar, IoIosStarHalf } from 'react-icons/io';
 
 
 var Stars =(props) => {

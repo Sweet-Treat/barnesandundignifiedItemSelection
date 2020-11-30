@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiOutlineInfoCircle } from 'react-icons/Ai';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 
 var Radiobuttons = () => {
   return(

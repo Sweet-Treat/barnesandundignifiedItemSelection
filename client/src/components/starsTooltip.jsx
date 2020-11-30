@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoIosStar } from 'react-icons/Io';
+import { IoIosStar } from 'react-icons/io';
 import ProgressBar from './progressBar.jsx';
 
 var  StarsTooltip = (props) => {

@@ -6,7 +6,7 @@ import 'regenerator-runtime/runtime';
 
 import App from '../client/src/app.jsx';
 import Header from '../client/src/components/header.jsx';
-//import Stars from '../client/src/components/stars.jsx';
+import Stars from '../client/src/components/stars.jsx';
 import Inventory from '../client/src/components/inventory.jsx';
 import Options from '../client/src/components/options.jsx';
 import Footer from '../client/src/components/footer.jsx';

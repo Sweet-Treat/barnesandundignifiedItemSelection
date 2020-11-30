@@ -1,10 +1,10 @@
 import React from 'react';
-import { RiTruckLine } from 'react-icons/Ri';
-import { AiOutlineInfoCircle } from 'react-icons/Ai';
-import {FiArrowDownCircle} from 'react-icons/Fi';
-import {TiDeviceTablet} from 'react-icons/Ti';
-import {BsGift} from 'react-icons/Bs';
-import {BiSmile} from 'react-icons/Bi';
+import { RiTruckLine } from 'react-icons/ri';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
+import {FiArrowDownCircle} from 'react-icons/fi';
+import {TiDeviceTablet} from 'react-icons/ti';
+import {BsGift} from 'react-icons/bs';
+import {BiSmile} from 'react-icons/bi';
 
 var Footer = ({currentOption}) => {
   return (
