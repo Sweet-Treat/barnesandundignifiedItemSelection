@@ -402,3 +402,12 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+.overall-wrapper {
+  display: flex;
+}
+
+.book-picture-main{
+  margin-left: 80px;
+  margin-right: 100px;
+}
