@@ -19,6 +19,7 @@ class App extends React.Component {
       currentName: 'Placeholder name',
       regularPrice: 999,
       currentDiscount: 999,
+      currentStoreAvailability: true,
       titleAndAuthor: {},
       reviews: {
         starsEach: []
@@ -33,7 +34,8 @@ class App extends React.Component {
       currentOption: value,
       currentName: this.state.inventory[value].name,
       regularPrice: this.state.inventory[value].price,
-      currentDiscount: this.state.inventory[value].discount
+      currentDiscount: this.state.inventory[value].discount,
+      currentStoreAvailability: this.state.inventory[value].buyOnlinePickUpInStore
     })
     console.log('this.state.currentName', this.state.currentName);
   }
@@ -61,7 +63,7 @@ class App extends React.Component {
       <div>
         <div><Header titleAndAuthor = {this.state.titleAndAuthor} reviews = {this.state.reviews}/></div>
         <div><Inventory inventory={this.state.inventory} currentOption={this.state.currentOption} currentName={this.state.currentName} regularPrice={this.state.regularPrice} currentDiscount={this.state.currentDiscount} titleAndAuthor ={this.state.titleAndAuthor} handleFormatClick={this.handleFormatClick}/></div>
-        <div><Radiobuttons currentName={this.state.currentName} /></div>
+        <div><Radiobuttons currentName={this.state.currentName} currentStoreAvailability={this.state.currentStoreAvailability} /></div>
         <div><Footer currentOption={this.state.currentOption}/></div>
       </div>
     );
