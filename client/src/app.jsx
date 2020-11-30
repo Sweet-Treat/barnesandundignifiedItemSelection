@@ -35,6 +35,7 @@ class App extends React.Component {
       regularPrice: this.state.inventory[value].price,
       currentDiscount: this.state.inventory[value].discount
     })
+    console.log('this.state.currentName', this.state.currentName);
   }
 
   componentDidMount() {
@@ -60,7 +61,7 @@ class App extends React.Component {
       <div>
         <div><Header titleAndAuthor = {this.state.titleAndAuthor} reviews = {this.state.reviews}/></div>
         <div><Inventory inventory={this.state.inventory} currentOption={this.state.currentOption} currentName={this.state.currentName} regularPrice={this.state.regularPrice} currentDiscount={this.state.currentDiscount} titleAndAuthor ={this.state.titleAndAuthor} handleFormatClick={this.handleFormatClick}/></div>
-        <div><Radiobuttons/></div>
+        <div><Radiobuttons currentName={this.state.currentName} /></div>
         <div><Footer currentOption={this.state.currentOption}/></div>
       </div>
     );
