@@ -37,11 +37,10 @@ class App extends React.Component {
       currentDiscount: this.state.inventory[value].discount,
       currentStoreAvailability: this.state.inventory[value].buyOnlinePickUpInStore
     })
-    console.log('this.state.currentName', this.state.currentName);
   }
 
   componentDidMount() {
-    var isbn = '9781524763169';
+    var isbn = '9781524763169'; // <-- this should eventually change in order to render what ever is in the url and not hardcoding it
     this.getInventory(isbn, (err, data) => {
       if (err) {console.log('there was an error in the getInventory get request')}
       else {
@@ -50,6 +49,7 @@ class App extends React.Component {
           currentName: data.data.formats[0].name,
           regularPrice: data.data.formats[0].price,
           currentDiscount: data.data.formats[0].discount,
+          currentStoreAvailability: data.data.formats[0].buyOnlinePickUpInStore,
           reviews: data.data.reviews,
           titleAndAuthor: data.data.titleAndAuthor
         })

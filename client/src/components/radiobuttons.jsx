@@ -14,18 +14,18 @@ var Radiobuttons = (props) => {
           </label>
         </div>
         <div>
-          <label className="radio-container">
+          {props.currentStoreAvailability && <label className="radio-container">
             <input type="radio" name="selection"/>
             <span>Buy Online, Pick in Store at </span>
             <span className="radio-container-bold">B&N Bay Street - Emeryville </span>
             <AiOutlineInfoCircle className="green-text circle-info"/>
-          </label>
-          <label className="radio-container-gray-out">
+          </label>}
+          {!props.currentStoreAvailability && <label className="radio-container-gray-out">
             <input type="radio" name="selection" disabled="true"/>
             <span>Unavailable for pickup at </span>
             <span className="radio-container-bold">B&N Bay Street - Emeryville </span>
             <AiOutlineInfoCircle className="green-text circle-info"/>
-          </label>
+          </label>}
           <div className="green-text availability">Check Availability at Nearby Stores</div>
         </div>
       </div>}
