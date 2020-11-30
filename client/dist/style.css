@@ -46,6 +46,15 @@
   font-weight: 400;
 }
 
+.radio-container-gray-out{
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #757575;
+}
+
 .radio-container-bold{
   font-weight: 700;
 }

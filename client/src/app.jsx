@@ -19,6 +19,7 @@ class App extends React.Component {
       currentName: 'Placeholder name',
       regularPrice: 999,
       currentDiscount: 999,
+      currentStoreAvailability: true,
       titleAndAuthor: {},
       reviews: {
         starsEach: []
@@ -33,12 +34,13 @@ class App extends React.Component {
       currentOption: value,
       currentName: this.state.inventory[value].name,
       regularPrice: this.state.inventory[value].price,
-      currentDiscount: this.state.inventory[value].discount
+      currentDiscount: this.state.inventory[value].discount,
+      currentStoreAvailability: this.state.inventory[value].buyOnlinePickUpInStore
     })
   }
 
   componentDidMount() {
-    var isbn = '9781524763169';
+    var isbn = '9781524763169'; // <-- this should eventually change in order to render what ever is in the url and not hardcoding it
     this.getInventory(isbn, (err, data) => {
       if (err) {console.log('there was an error in the getInventory get request')}
       else {
@@ -47,6 +49,7 @@ class App extends React.Component {
           currentName: data.data.formats[0].name,
           regularPrice: data.data.formats[0].price,
           currentDiscount: data.data.formats[0].discount,
+          currentStoreAvailability: data.data.formats[0].buyOnlinePickUpInStore,
           reviews: data.data.reviews,
           titleAndAuthor: data.data.titleAndAuthor
         })
@@ -60,7 +63,7 @@ class App extends React.Component {
       <div>
         <div><Header titleAndAuthor = {this.state.titleAndAuthor} reviews = {this.state.reviews}/></div>
         <div><Inventory inventory={this.state.inventory} currentOption={this.state.currentOption} currentName={this.state.currentName} regularPrice={this.state.regularPrice} currentDiscount={this.state.currentDiscount} titleAndAuthor ={this.state.titleAndAuthor} handleFormatClick={this.handleFormatClick}/></div>
-        <div><Radiobuttons/></div>
+        <div><Radiobuttons currentName={this.state.currentName} currentStoreAvailability={this.state.currentStoreAvailability} /></div>
         <div><Footer currentOption={this.state.currentOption}/></div>
       </div>
     );
