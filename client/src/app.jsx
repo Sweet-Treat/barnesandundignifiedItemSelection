@@ -60,11 +60,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div><Header titleAndAuthor = {this.state.titleAndAuthor} reviews = {this.state.reviews}/></div>
-        <div><Inventory inventory={this.state.inventory} currentOption={this.state.currentOption} currentName={this.state.currentName} regularPrice={this.state.regularPrice} currentDiscount={this.state.currentDiscount} titleAndAuthor ={this.state.titleAndAuthor} handleFormatClick={this.handleFormatClick}/></div>
-        <div><Radiobuttons currentName={this.state.currentName} currentStoreAvailability={this.state.currentStoreAvailability} /></div>
-        <div><Footer currentOption={this.state.currentOption}/></div>
+      <div className ="overall-wrapper">
+        <img className="book-picture-main" src="book_thumbnail.jpg" alt="book thumbnail here" width="280"/>
+        <div>
+          <div><Header titleAndAuthor = {this.state.titleAndAuthor} reviews = {this.state.reviews}/></div>
+          <div><Inventory inventory={this.state.inventory} currentOption={this.state.currentOption} currentName={this.state.currentName} regularPrice={this.state.regularPrice} currentDiscount={this.state.currentDiscount} titleAndAuthor ={this.state.titleAndAuthor} handleFormatClick={this.handleFormatClick}/></div>
+          <div><Radiobuttons currentName={this.state.currentName} currentStoreAvailability={this.state.currentStoreAvailability} /></div>
+          <div><Footer currentOption={this.state.currentOption}/></div>
+        </div>
       </div>
     );
   }
