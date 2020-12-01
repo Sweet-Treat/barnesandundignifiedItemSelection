@@ -56,7 +56,7 @@ var createSummaryReview = (data) => {
 
   var result = {
     totalReviews: data.length,
-    avgRating: reviewSum/ data.length,
+    avgRating: (reviewSum/ data.length).toFixed(2),
     starsEach: [rating5, rating4, rating3, rating2, rating1]
 
   }

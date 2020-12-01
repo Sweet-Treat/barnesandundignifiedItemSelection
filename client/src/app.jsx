@@ -40,7 +40,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    var isbn = '9781524763169'; // <-- this should eventually change in order to render what ever is in the url and not hardcoding it
+    var isbn = '9780316187183'; // <-- this should eventually change in order to render what ever is in the url and not hardcoding it
     this.getInventory(isbn, (err, data) => {
       if (err) {console.log('there was an error in the getInventory get request')}
       else {
