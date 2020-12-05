@@ -7,7 +7,7 @@ var Radiobuttons = (props) => {
       {props.currentName !== "Nook Book" && <div>
         <div>
           <label className="radio-container">
-            <input type="radio" name="selection" checked/>
+            <input type="radio" name="selection" defaultChecked/>
             <span>Ship This Item - </span>
             <span className="radio-container-bold">Qualifies for Free Shipping </span>
             <AiOutlineInfoCircle className="green-text circle-info"/>
