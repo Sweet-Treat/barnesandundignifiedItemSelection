@@ -1,8 +1,8 @@
-.green-text{
+#item-selection .green-text{
   color: #347d56;
 }
 
-.book-title{
+#item-selection .book-title{
   font-family: Poynter, Georgia, serif;
   font-weight: 400;
   font-style: normal;
@@ -10,7 +10,7 @@
   line-height: 1.25;
 }
 
-.book-author{
+#item-selection .book-author{
   font-family: Lato, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -18,27 +18,28 @@
   line-height: 1.25;
 }
 
-.author-wrapper{
+#item-selection .author-wrapper{
   width: 300px;
 }
 
-.rating{
+#item-selection .rating{
   font-family: Lato, sans-serif;
   font-size: 11.5px;
 }
 
-.star-empty{
+#item-selection .star-empty{
   color: #e2e2e2;
 }
-.star{
+
+#item-selection .star{
   color: #f2a70c;
 }
 
-.line-separator{
+#item-selection .line-separator{
   border-top: 1px solid #cccccc;
 }
 
-.radio-container{
+#item-selection .radio-container{
   font-family: Lato, sans-serif;
   font-style: normal;
   font-size: 1.0625rem;
@@ -46,7 +47,7 @@
   font-weight: 400;
 }
 
-.radio-container-gray-out{
+#item-selection .radio-container-gray-out{
   font-family: Lato, sans-serif;
   font-style: normal;
   font-size: 1.0625rem;
@@ -55,57 +56,58 @@
   color: #757575;
 }
 
-.radio-container-bold{
+#item-selection .radio-container-bold{
   font-weight: 700;
 }
 
-.radio-container:hover{
+#item-selection .radio-container:hover{
   text-decoration: underline;
   cursor: pointer;
 }
 
-.circle-info:hover{
+#item-selection .circle-info:hover{
   color: white;
   background-color:  #347d56;
   cursor: pointer;
 }
 
-.availability{
+#item-selection .availability{
   font-family: Lato,sans-serif;
   font-weight: 400;
   font-style: normal;
   line-height: 1;
 }
 
-.availability:hover{
+#item-selection .availability:hover{
   text-decoration: underline;
   cursor: pointer;
 }
 
-.button-container{
+#item-selection .button-container{
   margin: 10px;
 }
 
-.add-to-cart{
+#item-selection .add-to-cart{
   font-family: Lato,sans-serif;
   margin: 10px;
   padding: 10px 20px;
   color: white;
   background-color: #3d6db5;
 }
-.add-to-cart:hover{
+
+#item-selection .add-to-cart:hover{
   background-color: #365c93;
   cursor: pointer;
 }
 
-.sign-in{
+#item-selection .sign-in{
   font-family: Lato,sans-serif;
   margin: 10px;
   padding: 10px 20px;
   background-color: white;
 }
 
-.sign-in:hover{
+#item-selection .sign-in:hover{
   color: white;
   background-color: black;
   cursor: pointer;
@@ -116,7 +118,7 @@
   font-style: normal;
 }
 
-.price{
+#item-selection .price{
   font-family: Lato, sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -124,7 +126,7 @@
   margin-right: .75rem;
 }
 
-.price-regular{
+#item-selection .price-regular{
   color: #666;
   font-family: Lato,sans-serif;
   font-weight: 400;
@@ -133,11 +135,11 @@
   text-decoration: line-through;
 }
 
-.price-pipe{
+#item-selection .price-pipe{
   color: #666;
 }
 
-.percentage-discount{
+#item-selection .percentage-discount{
   color: #d83e00;
   font-family: Lato,sans-serif;
   font-weight: 400;
@@ -145,13 +147,13 @@
   font-size: 1.077rem;
 }
 
-.inventory-container{
+#item-selection .inventory-container{
   width: 100%;
   float: left;
 }
 
 
-.inventory-selected{
+#item-selection .inventory-selected{
   font-family: Lato,sans-serif;
   width: 100px;
   text-align: center;
@@ -163,7 +165,7 @@
   margin: 5px;
 }
 
-.inventory-element{
+#item-selection .inventory-element{
   font-family: Lato,sans-serif;
   width: 100px;
   text-align: center;
@@ -174,16 +176,16 @@
   margin: 5px;
 }
 
-.inventory-element:hover{
+#item-selection .inventory-element:hover{
   border: 1px solid #346250;
   cursor: pointer;
 }
 
-.inventory-price{
+#item-selection .inventory-price{
   font-weight: 700;
 }
 
-.view-all-inventory{
+#item-selection .view-all-inventory{
   font-family: Lato, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -193,11 +195,11 @@
   cursor: pointer;
 }
 
-.view-all-inventory:hover{
+#item-selection .view-all-inventory:hover{
   text-decoration: underline;
 }
 
-.footer-text{
+#item-selection .footer-text{
   margin-left: 5px;
   font-family: Lato, sans-serif;
   font-size: 1.0625rem;
@@ -205,16 +207,16 @@
   font-weight: 400;
 }
 
-.footer-details{
+#item-selection .footer-details{
   margin-left: 20px;
 }
 
-.footer-details:hover{
+#item-selection .footer-details:hover{
   text-decoration: underline;
   cursor: pointer;
 }
 
-.footer-nook{
+#item-selection .footer-nook{
   font-size: 1.0625rem;
   line-height: 1.25;
   margin-bottom: .75rem;
@@ -222,12 +224,12 @@
   font-weight: 400;
 }
 
-.footer-details-nook:hover{
+#item-selection .footer-details-nook:hover{
   text-decoration: underline;
   cursor: pointer;
 }
 
-.tooltip-wrapper{
+#item-selection .tooltip-wrapper{
   font-family: Lato, sans-serif;
   width: 250px;
   border-color: black;
@@ -237,29 +239,29 @@
   background-color: white;
 }
 
-.tooltip-wrapper div{
+#item-selection .tooltip-wrapper div{
   display: inline-block;
   font-family: Lato,sans-serif;
 }
 
-.progress-bar-wrapper{
+#item-selection .progress-bar-wrapper{
   padding: 2px;
 }
 
-.progress-bar {
+#item-selection .progress-bar {
   position: relative;
   height: 10px;
   width: 200px;
   background: #f0f0f0;
 }
 
-.filler {
+#item-selection .filler {
   position: absolute;
   background: #347d56;
   height: 100%;
 }
 
-.read-reviews{
+#item-selection .read-reviews{
   font-family: Lato, sans-serif;
   margin: 10px;
   padding: 10px 20px;
@@ -268,7 +270,7 @@
   text-align:center;
 }
 
-.modal {
+#item-selection .modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -277,7 +279,7 @@
   background: rgba(0, 0, 0, 0.6);
 }
 
-.modal-main {
+#item-selection .modal-main {
   position: fixed;
   background: white;
   width: 65%;
@@ -287,12 +289,12 @@
   transform: translate(-50%,-50%);
 }
 
-.modal-title-wrapper {
+#item-selection .modal-title-wrapper {
   position:relative;
   margin: 10px;
 }
 
-.modal-title {
+#item-selection .modal-title {
   margin: 25px;
   font-family: Poynter,Georgia,serif;
   font-weight: 600;
@@ -300,38 +302,38 @@
   font-size: 1.875rem;
 }
 
-.modal-button {
+#item-selection .modal-button {
   position:absolute;
   top:0;
   right:0;
 }
 
-.modal-button:hover {
+#item-selection .modal-button:hover {
   cursor: pointer;
 }
 
-.display-block {
+#item-selection .display-block {
   display: block;
 }
 
-.format-container{
+#item-selection .format-container{
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.modal-format {
+#item-selection .modal-format {
   border: 5px;
   padding: 10px;
   color: #347d56;
 }
 
-.modal-format:hover {
+#item-selection .modal-format:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 
-.modal-format-selected {
+#item-selection .modal-format-selected {
   border: 5px;
   padding: 10px;
   color: black;
@@ -340,22 +342,22 @@
   text-decoration: underline;
 }
 
-.modal-information-wrapper {
+#item-selection .modal-information-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.modal-information-children {
+#item-selection .modal-information-children {
   display: flex;
   flex-direction: column;
 }
 
-.book-picture{
+#item-selection .book-picture{
   margin: 20px;
 }
 
-.modal-book-title {
+#item-selection .modal-book-title {
   font-family: Lato, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -365,7 +367,7 @@
   margin: 2.5px;
 }
 
-.modal-book-publisher {
+#item-selection .modal-book-publisher {
   font-family: Lato,sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -376,38 +378,38 @@
   margin: 2.5px;
 }
 
-.modal-product-details-link{
+#item-selection .modal-product-details-link{
   margin: 2.5px;
   font-family: Lato, sans-serif;
   color: #347d56;
 }
 
-.modal-product-details-link:hover{
+#item-selection .modal-product-details-link:hover{
   text-decoration: underline;
   cursor: pointer;
 }
 
-.button-container-modal{
+#item-selection .button-container-modal{
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.add-to-wishlist {
+#item-selection .add-to-wishlist {
   color: #347d56;
   font-family: Lato, sans-serif;
 }
 
-.add-to-wishlist:hover {
+#item-selection .add-to-wishlist:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 
-.overall-wrapper {
+#item-selection .overall-wrapper {
   display: flex;
 }
 
-.book-picture-main{
+#item-selection .book-picture-main{
   margin-left: 80px;
   margin-right: 100px;
 }
