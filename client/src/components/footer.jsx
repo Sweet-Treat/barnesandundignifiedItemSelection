@@ -16,7 +16,7 @@ var Footer = ({currentOption}) => {
       </div>}
 
       {currentOption === 1 && <div>
-        <hr class="line-separator"/>
+        <hr className="line-separator"/>
         <span className="footer-nook">Available on Compatible NOOK devices and the free NOOK Apps.</span>
         <AiOutlineInfoCircle className="green-text circle-info"/>
         <div>
