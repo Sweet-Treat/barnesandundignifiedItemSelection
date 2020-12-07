@@ -157,7 +157,7 @@ describe('Test the Footer component, in case we have a Nook Book', () => {
   });
 
   it('it should have specific Nook Book footer text', () => {
-    expect(wrapper.find('.footer-nook')).toHaveLength(3);
+    expect(wrapper.find('.footer-nook')).toHaveLength(5);
   });
   it('it should not have general other format footer text', () => {
     expect(wrapper.find('.footer-text')).toHaveLength(0);
