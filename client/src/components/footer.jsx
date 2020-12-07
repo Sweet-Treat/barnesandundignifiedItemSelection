@@ -26,11 +26,11 @@ var Footer = ({currentOption}) => {
         </div>
         <div>
           <span><FiArrowDownCircle/></span>
-          <span className="green-text footer-details-nook">Get Free NOOK Book Sample</span>
+          <span className="green-text footer-details-nook footer-nook">Get Free NOOK Book Sample</span>
         </div>
         <div>
           <span><BsGift/></span>
-          <span className="green-text footer-details-nook">Buy As Gift</span>
+          <span className="green-text footer-details-nook footer-nook">Buy As Gift</span>
         </div>
         <div>
           <span><BiSmile/></span>

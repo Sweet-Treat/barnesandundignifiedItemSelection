@@ -8,7 +8,7 @@ var Header = (props) => {
   return (
     <div>
       <div className="book-title"> {props.titleAndAuthor.title} </div>
-      <div>
+      <div className="author-padding">
         <span className="book-author">by</span>
         <span className="book-author green-text"> {props.titleAndAuthor.author} </span>
       </div>
