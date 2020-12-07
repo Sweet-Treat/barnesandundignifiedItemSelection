@@ -66,7 +66,7 @@ class App extends React.Component {
   render() {
     return (
       <div className ="overall-wrapper">
-        <img className="book-picture-main" src="book_thumbnail.jpg" alt="book thumbnail here" width="280"/>
+        <img className="book-picture-main" src="https://picsum.photos/250/380" alt="book thumbnail here" width="250" height="380"/>
         <div>
           <div><Header titleAndAuthor = {this.state.titleAndAuthor} reviews = {this.state.reviews}/></div>
           <div><Inventory inventory={this.state.inventory} currentOption={this.state.currentOption} currentName={this.state.currentName} regularPrice={this.state.regularPrice} currentDiscount={this.state.currentDiscount} titleAndAuthor ={this.state.titleAndAuthor} handleFormatClick={this.handleFormatClick}/></div>

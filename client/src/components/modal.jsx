@@ -33,7 +33,7 @@ class Modal extends React.Component {
             }
           </div>
           <div className="modal-information-wrapper">
-            <img className="modal-information-children book-picture" src="book_thumbnail.jpg" alt="book thumbnail here" width="150"/>
+            <img className="modal-information-children book-picture" src="https://picsum.photos/150/200" alt="book thumbnail here" width="150" height="200"/>
             <div className="modal-information-children">
               <div className="modal-book-title">{this.props.titleAndAuthor.title}</div>
               <div className="modal-book-publisher">Pub. Date: {this.props.titleAndAuthor.publicationDate}</div>
