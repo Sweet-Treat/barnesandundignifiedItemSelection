@@ -26,7 +26,7 @@ class Inventory extends React.Component {
       <div>
         <div className ="name-type"> {this.props.currentName} </div>
         <div>
-          <span className ="price"> ${ this.props.currentDiscount === 0 ? `${this.props.regularPrice}.99` : ((this.props.regularPrice + 0.99) * (1 - this.props.currentDiscount / 100)).toFixed(2)} </span>
+          {this.props.regularPrice !==0 && <span className ="price"> ${ this.props.currentDiscount === 0 ? `${this.props.regularPrice}.99` : ((this.props.regularPrice + 0.99) * (1 - this.props.currentDiscount / 100)).toFixed(2)} </span>}
 
           {this.props.currentDiscount !== 0 &&
           <span>
