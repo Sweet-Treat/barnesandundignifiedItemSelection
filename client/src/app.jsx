@@ -17,8 +17,8 @@ class App extends React.Component {
       inventory: [],
       currentOption: 0,
       currentName: 'Placeholder name',
-      regularPrice: 999,
-      currentDiscount: 999,
+      regularPrice: 0,
+      currentDiscount: 0,
       currentStoreAvailability: true,
       titleAndAuthor: {},
       reviews: {
@@ -67,12 +67,12 @@ class App extends React.Component {
     return (
       <div className ="overall-wrapper">
         <img className="book-picture-main" src="https://picsum.photos/250/380" alt="book thumbnail here" width="250" height="380"/>
-        <div>
+        {this.state.regularPrice !==0 && <div>
           <div><Header titleAndAuthor = {this.state.titleAndAuthor} reviews = {this.state.reviews}/></div>
           <div><Inventory inventory={this.state.inventory} currentOption={this.state.currentOption} currentName={this.state.currentName} regularPrice={this.state.regularPrice} currentDiscount={this.state.currentDiscount} titleAndAuthor ={this.state.titleAndAuthor} handleFormatClick={this.handleFormatClick}/></div>
           <div><Radiobuttons currentName={this.state.currentName} currentStoreAvailability={this.state.currentStoreAvailability} /></div>
           <div><Footer currentOption={this.state.currentOption}/></div>
-        </div>
+        </div>}
       </div>
     );
   }
