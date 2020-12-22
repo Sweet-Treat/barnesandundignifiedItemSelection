@@ -37,7 +37,7 @@ class Inventory extends React.Component {
           </span>}
           <div>
             <Options inventory = {this.props.inventory} currentOption = {this.props.currentOption} handleFormatClick={this.props.handleFormatClick} handleAllInventoryClick={this.handleAllInventoryClick}/>
-            {this.state.showModal && <Modal inventory={this.props.inventory} titleAndAuthor={this.props.titleAndAuthor} handleAllInventoryClick={this.handleAllInventoryClick}/>}
+            {this.state.showModal && <Modal inventory={this.props.inventory} titleAndAuthor={this.props.titleAndAuthor} handleAllInventoryClick={this.handleAllInventoryClick} isbn={this.props.isbn}/>}
           </div>
         </div>
       </div>

@@ -23,7 +23,8 @@ class App extends React.Component {
       titleAndAuthor: {},
       reviews: {
         starsEach: []
-      }
+      },
+      isbn: '9780670020553'
     }
     this.getInventory = getInventory;
     this.handleFormatClick = this.handleFormatClick.bind(this);
@@ -43,6 +44,10 @@ class App extends React.Component {
     let queryUrl = window.location.search;
     let urlParams = new URLSearchParams(queryUrl);
     let isbn = urlParams.get('isbn');
+    this.setState({
+      isbn: isbn
+    })
+
 
 
 //    var isbn = '9780316187183'; // <-- this should eventually change in order to render what ever is in the url and not hardcoding it
@@ -65,13 +70,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className ="overall-wrapper">
-        <img className="book-picture-main" src="https://picsum.photos/250/380" alt="book thumbnail here" width="250" height="380"/>
-        {this.state.regularPrice !==0 && <div>
-          <div><Header titleAndAuthor = {this.state.titleAndAuthor} reviews = {this.state.reviews}/></div>
-          <div><Inventory inventory={this.state.inventory} currentOption={this.state.currentOption} currentName={this.state.currentName} regularPrice={this.state.regularPrice} currentDiscount={this.state.currentDiscount} titleAndAuthor ={this.state.titleAndAuthor} handleFormatClick={this.handleFormatClick}/></div>
-          <div><Radiobuttons currentName={this.state.currentName} currentStoreAvailability={this.state.currentStoreAvailability} /></div>
-          <div><Footer currentOption={this.state.currentOption}/></div>
+      <div>
+        {this.state.regularPrice !==0 && <div className ="overall-wrapper">
+          <img className="book-picture-main" src={`https://fec-item-selection.s3.us-east-2.amazonaws.com/${this.state.isbn}.jpg`} alt="book thumbnail here" width="250" height="380"/>
+          <div>
+            <div><Header titleAndAuthor = {this.state.titleAndAuthor} reviews = {this.state.reviews}/></div>
+            <div><Inventory inventory={this.state.inventory} currentOption={this.state.currentOption} currentName={this.state.currentName} regularPrice={this.state.regularPrice} currentDiscount={this.state.currentDiscount} titleAndAuthor ={this.state.titleAndAuthor} handleFormatClick={this.handleFormatClick} isbn={this.state.isbn}/></div>
+            <div><Radiobuttons currentName={this.state.currentName} currentStoreAvailability={this.state.currentStoreAvailability} /></div>
+            <div><Footer currentOption={this.state.currentOption}/></div>
+          </div>
         </div>}
       </div>
     );
