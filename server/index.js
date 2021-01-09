@@ -20,7 +20,7 @@ app.use(express.static('client/dist'))
 function getTitleAndAuthor(isbn, cb) {
   console.log('hello from get title and author')
   // commented out the actual get request until other have their servers up and running
-  //return axios.get(`http://localhost:5001/products/${isbn}`);
+  //return axios.get(`http://3.16.221.35:5001/products/${isbn}`);
   return dummyProduct; // <-- comment this out once the the row above is uncommented
 
 
@@ -33,7 +33,7 @@ function getTitleAndAuthor(isbn, cb) {
 function getSummaryReview(isbn, cb) {
   console.log('hello from get reviews')
   // commented out the actual get request until other have their servers up and running
-  //return axios.get(`http://localhost:8000/books/${isbn}/reviews`);
+  //return axios.get(`http://http://3.140.58.207/:8000/books/${isbn}/reviews`);
   return dummyReviews; // <-- comment this out once the the row above is uncommented
 //    .then((data) => cb(null, data.data))
 //    .catch(() => cb(err))
