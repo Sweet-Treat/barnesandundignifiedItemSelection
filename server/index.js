@@ -3,10 +3,9 @@ const bodyParser = require('body-parser');
 const axios = require('axios');
 var cors = require('cors');
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 const Model = require('../db/model.js');
-
 const Books = require('../db/index.js');
 
 app.use(cors());
