@@ -19,8 +19,8 @@ app.use(express.static('client/dist'))
 function getTitleAndAuthor(isbn, cb) {
   console.log('hello from get title and author')
   // commented out the actual get request until other have their servers up and running
-  //return axios.get(`http://3.16.221.35:5001/products/${isbn}`);
-  return dummyProduct(isbn); // <-- comment this out once the the row above is uncommented
+  return axios.get(`http://3.16.221.35:5001/products/${isbn}`);
+  //return dummyProduct(isbn); // <-- comment this out once the the row above is uncommented
 
 
    // .then((data) => cb(null, data.data))
@@ -32,8 +32,8 @@ function getTitleAndAuthor(isbn, cb) {
 function getSummaryReview(isbn, cb) {
   console.log('hello from get reviews')
   // commented out the actual get request until other have their servers up and running
-  //return axios.get(`http://http://3.140.58.207/:8000/books/${isbn}/reviews`);
-  return dummyReviews(isbn); // <-- comment this out once the the row above is uncommented
+  return axios.get(`http://http://3.140.58.207/:8000/books/${isbn}/reviews`);
+  //return dummyReviews(isbn); // <-- comment this out once the the row above is uncommented
 //    .then((data) => cb(null, data.data))
 //    .catch(() => cb(err))
 }
@@ -62,7 +62,31 @@ app.get('/product/:id/formats', (req, res) => {
           res.send(bookInfo);
         }
       })
-    });
+    })
+    .catch( () => {
+        var results = [];
+        results[0] = dummyProduct(id);
+        results[1] = dummyReviews(id);
+        bookInfo.titleAndAuthor = {
+          title: results[0].data.bookTitle,
+          author: results[0].data.author,
+          publisher: results[0].data.publisherName,
+          publicationDate: results[0].data.publicationDate
+        };
+        var summaryReview = Model.createSummaryReview(results[1].data)
+        bookInfo.reviews = summaryReview;
+
+        Books.findOne({isbn: id}, (err, result) => {
+          if (err) {
+            console.log('ISBN inventory does not exist')
+            res.send();
+          } else {
+            console.log('ISBN inventory exists')
+            bookInfo.formats = result.formats;
+            res.send(bookInfo);
+          }
+        })
+      })
 });
 
 app.listen(port, () => {
