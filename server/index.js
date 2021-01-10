@@ -32,13 +32,13 @@ function getTitleAndAuthor(isbn, cb) {
 function getSummaryReview(isbn, cb) {
   console.log('hello from get reviews')
   // commented out the actual get request until other have their servers up and running
-  return axios.get(`http://http://3.140.58.207/:8000/books/${isbn}/reviews`);
+  return axios.get(`http://3.140.58.207/:8000/books/${isbn}/reviews`);
   //return dummyReviews(isbn); // <-- comment this out once the the row above is uncommented
 //    .then((data) => cb(null, data.data))
 //    .catch(() => cb(err))
 }
 
-app.get('/product/:id/formats', (req, res) => {
+app.get('http://18.188.228.195/product/:id/formats', (req, res) => {
   var id = req.params.id || '9780765326386';
   bookInfo = {}
   Promise.all([getTitleAndAuthor(id), getSummaryReview(id)])
