@@ -1,6 +1,11 @@
-# Project Name
+# Items Selection B&N
 
-> Project description
+> The item selection component of the Barnes & Nobles website.
+> This is built using theMERN stack.
+
+![alt text](https://github.com/Sweet-Treat/barnesandundignifiedItemSelection/blob/main/gif-fec.gif "Item selection app")
+
+[project link](http://52.14.148.12:3001/?isbn=9781571311931).
 
 ## Related Projects
 
