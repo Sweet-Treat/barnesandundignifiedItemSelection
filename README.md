@@ -1,7 +1,7 @@
 # Items Selection B&N
 
 > The item selection component of the Barnes & Nobles website.\
-This is built using the MERN stack.\
+This is built using the MERN stack.
 
 > See site [here](http://52.14.148.12:3001/?isbn=9781571311931)
 
