@@ -428,3 +428,8 @@
   margin-left: 80px;
   margin-right: 100px;
 }
+
+.pic-books:hover {
+  cursor: pointer;
+
+}

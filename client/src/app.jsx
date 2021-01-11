@@ -7,6 +7,8 @@ import Header from './components/header.jsx';
 import Inventory from './components/inventory.jsx';
 import Radiobuttons from './components/radiobuttons.jsx';
 import Footer from './components/footer.jsx';
+import Carousel from './components/carousel.jsx';
+
 import getInventory from './lib/getInventory.js';
 
 
@@ -28,6 +30,7 @@ class App extends React.Component {
     }
     this.getInventory = getInventory;
     this.handleFormatClick = this.handleFormatClick.bind(this);
+    this.onImageClick = this.onImageClick.bind(this);
   }
 
   handleFormatClick(value) {
@@ -40,6 +43,27 @@ class App extends React.Component {
     })
   }
 
+  onImageClick(e) {
+    var picISBN = e.target.id;
+    this.setState({
+      isbn: picISBN
+    })
+    this.getInventory(picISBN, (err, data) => {
+      if (err) {console.log('there was an error in the getInventory get request')}
+      else {
+        this.setState({
+          inventory: data.data.formats,
+          currentName: data.data.formats[0].name,
+          regularPrice: data.data.formats[0].price,
+          currentDiscount: data.data.formats[0].discount,
+          currentStoreAvailability: data.data.formats[0].buyOnlinePickUpInStore,
+          reviews: data.data.reviews,
+          titleAndAuthor: data.data.titleAndAuthor
+        })
+      }
+    });
+  }
+
   componentDidMount() {
     let queryUrl = window.location.search;
     let urlParams = new URLSearchParams(queryUrl);
@@ -47,8 +71,6 @@ class App extends React.Component {
     this.setState({
       isbn: isbn
     })
-
-
 
 //    var isbn = '9780316187183'; // <-- this should eventually change in order to render what ever is in the url and not hardcoding it
     this.getInventory(isbn, (err, data) => {
@@ -79,7 +101,9 @@ class App extends React.Component {
             <div><Radiobuttons currentName={this.state.currentName} currentStoreAvailability={this.state.currentStoreAvailability} /></div>
             <div><Footer currentOption={this.state.currentOption}/></div>
           </div>
+
         </div>}
+        <div><Carousel onImageClick={this.onImageClick}/></div>
       </div>
     );
   }
