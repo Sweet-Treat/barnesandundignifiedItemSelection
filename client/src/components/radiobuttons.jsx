@@ -21,7 +21,7 @@ var Radiobuttons = (props) => {
             <AiOutlineInfoCircle className="green-text circle-info"/>
           </label>}
           {!props.currentStoreAvailability && <label className="radio-container-gray-out">
-            <input type="radio" name="selection" disabled="true"/>
+            <input type="radio" name="selection" disabled={true}/>
             <span>Unavailable for pickup at </span>
             <span className="radio-container-bold">B&N Bay Street - Emeryville </span>
             <AiOutlineInfoCircle className="green-text circle-info"/>
