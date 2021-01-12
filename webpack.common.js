@@ -1,4 +1,5 @@
 var path = require("path");
+
 var SRC_DIR = path.join(__dirname, "/client/src");
 var DIST_DIR = path.join(__dirname, "/client/dist");
 module.exports = {
@@ -10,14 +11,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?/,
-        include: SRC_DIR,
-        loader: "babel-loader",
-        options: {
-          presets: [ "@babel/preset-react", "@babel/preset-env" ],
+        test: [/\.jsx$/],
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [ "@babel/preset-react", "@babel/preset-env" ],
+          },
         },
       },
     ],
   },
-  devtool: 'source-map'
 };
