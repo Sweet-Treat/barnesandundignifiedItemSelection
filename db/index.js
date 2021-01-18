@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/fecItemSelection', {useNewUrlParser: true, useUnifiedTopology: true}, () => console.log('Connected to Mongo'));
+mongoose.connect('mongodb://localhost/fecItemSelection', {useNewUrlParser: true, useUnifiedTopology: true}, () => console.log('Connected to Mongo')); // endpoint locally
 
 const schema = new mongoose.Schema({
   "isbn": String,
