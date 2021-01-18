@@ -1,1 +1,1 @@
-ssh -i "/Users/matteo/Desktop/HackReactor/Immersive/front-end-capstone/service/fec-capstone.pem" ec2-user@ec2-18-188-228-195.us-east-2.compute.amazonaws.com
+ssh -i "/Users/matteo/Desktop/HackReactor/Immersive/front-end-capstone/service/fec-capstone.pem" ec2-user@ec2-3-16-43-184.us-east-2.compute.amazonaws.com

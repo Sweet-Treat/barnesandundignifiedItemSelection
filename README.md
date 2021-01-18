@@ -59,9 +59,23 @@ To run locally, listens on port 3001
 ```sh
 npm run server-dev
 ```
+Run http://localhost:3001/?isbn=9781571311931
+
+Other valid isbn:
+- 9781524763169
+- 9781571311931
+- 9780765326386
+- 9780316187183
+- 9780670020553
+- 9780765386489
+- 9781250088482
+- 9780062667632
+
+Book pictures are stored on an S3 AWS bucket
+
 ### Production
 
 To run in production
-- Change endpoint in client/dist/src/lib/inventory.js
+- Change endpoint in client/src/lib/inventory.js
 - Change Mongo URI in db/index.js
 - Change endpoints for TitleAndAuthor and Reviews service (may not be required)
